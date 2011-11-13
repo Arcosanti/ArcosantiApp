@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE75696714703936007882FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE75696614703936007882FD /* UIKit.framework */; };
+		EE75696914703936007882FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE75696814703936007882FD /* Foundation.framework */; };
+		EE75696B14703936007882FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE75696A14703936007882FD /* CoreGraphics.framework */; };
+		EE75696D14703936007882FD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE75696C14703936007882FD /* CoreData.framework */; };
+		EE75697314703937007882FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE75697114703937007882FD /* InfoPlist.strings */; };
+		EE75697514703937007882FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE75697414703937007882FD /* main.m */; };
+		EE75697914703937007882FD /* RIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE75697814703937007882FD /* RIAppDelegate.m */; };
+		EE75697C14703937007882FD /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE75697A14703937007882FD /* MainStoryboard_iPhone.storyboard */; };
+		EE75697F14703937007882FD /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE75697D14703937007882FD /* MainStoryboard_iPad.storyboard */; };
+		EE75698214703937007882FD /* Arcosanti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE75698014703937007882FD /* Arcosanti.xcdatamodeld */; };
+		EE75698514703937007882FD /* RIMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE75698414703937007882FD /* RIMasterViewController.m */; };
+		EE75698814703937007882FD /* RIDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE75698714703937007882FD /* RIDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EE75696214703936007882FD /* Arcosanti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcosanti.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE75696614703936007882FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EE75696814703936007882FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EE75696A14703936007882FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EE75696C14703936007882FD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EE75697014703937007882FD /* Arcosanti-Info.plist */ = {isa = PBXFileReference; path = "Arcosanti-Info.plist"; sourceTree = "<group>"; };
+		EE75697214703937007882FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EE75697414703937007882FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EE75697614703937007882FD /* Arcosanti-Prefix.pch */ = {isa = PBXFileReference; path = "Arcosanti-Prefix.pch"; sourceTree = "<group>"; };
+		EE75697714703937007882FD /* RIAppDelegate.h */ = {isa = PBXFileReference; path = RIAppDelegate.h; sourceTree = "<group>"; };
+		EE75697814703937007882FD /* RIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIAppDelegate.m; sourceTree = "<group>"; };
+		EE75697B14703937007882FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		EE75697E14703937007882FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		EE75698114703937007882FD /* Arcosanti.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Arcosanti.xcdatamodel; sourceTree = "<group>"; };
+		EE75698314703937007882FD /* RIMasterViewController.h */ = {isa = PBXFileReference; path = RIMasterViewController.h; sourceTree = "<group>"; };
+		EE75698414703937007882FD /* RIMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIMasterViewController.m; sourceTree = "<group>"; };
+		EE75698614703937007882FD /* RIDetailViewController.h */ = {isa = PBXFileReference; path = RIDetailViewController.h; sourceTree = "<group>"; };
+		EE75698714703937007882FD /* RIDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIDetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE75695F14703936007882FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE75696714703936007882FD /* UIKit.framework in Frameworks */,
+				EE75696914703936007882FD /* Foundation.framework in Frameworks */,
+				EE75696B14703936007882FD /* CoreGraphics.framework in Frameworks */,
+				EE75696D14703936007882FD /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE75695714703935007882FD = {
+			isa = PBXGroup;
+			children = (
+				EE75696E14703936007882FD /* Arcosanti */,
+				EE75696514703936007882FD /* Frameworks */,
+				EE75696314703936007882FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE75696314703936007882FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE75696214703936007882FD /* Arcosanti.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE75696514703936007882FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE75696614703936007882FD /* UIKit.framework */,
+				EE75696814703936007882FD /* Foundation.framework */,
+				EE75696A14703936007882FD /* CoreGraphics.framework */,
+				EE75696C14703936007882FD /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE75696E14703936007882FD /* Arcosanti */ = {
+			isa = PBXGroup;
+			children = (
+				EE75697714703937007882FD /* RIAppDelegate.h */,
+				EE75697814703937007882FD /* RIAppDelegate.m */,
+				EE75697A14703937007882FD /* MainStoryboard_iPhone.storyboard */,
+				EE75697D14703937007882FD /* MainStoryboard_iPad.storyboard */,
+				EE75698314703937007882FD /* RIMasterViewController.h */,
+				EE75698414703937007882FD /* RIMasterViewController.m */,
+				EE75698614703937007882FD /* RIDetailViewController.h */,
+				EE75698714703937007882FD /* RIDetailViewController.m */,
+				EE75698014703937007882FD /* Arcosanti.xcdatamodeld */,
+				EE75696F14703937007882FD /* Supporting Files */,
+			);
+			path = Arcosanti;
+			sourceTree = "<group>";
+		};
+		EE75696F14703937007882FD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE75697014703937007882FD /* Arcosanti-Info.plist */,
+				EE75697114703937007882FD /* InfoPlist.strings */,
+				EE75697414703937007882FD /* main.m */,
+				EE75697614703937007882FD /* Arcosanti-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE75696114703936007882FD /* Arcosanti */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE75698B14703937007882FD /* Build configuration list for PBXNativeTarget "Arcosanti" */;
+			buildPhases = (
+				EE75695E14703936007882FD /* Sources */,
+				EE75695F14703936007882FD /* Frameworks */,
+				EE75696014703936007882FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arcosanti;
+			productName = Arcosanti;
+			productReference = EE75696214703936007882FD /* Arcosanti.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE75695914703935007882FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = river.io;
+			};
+			buildConfigurationList = EE75695C14703935007882FD /* Build configuration list for PBXProject "Arcosanti" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EE75695714703935007882FD;
+			productRefGroup = EE75696314703936007882FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE75696114703936007882FD /* Arcosanti */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE75696014703936007882FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE75697314703937007882FD /* InfoPlist.strings in Resources */,
+				EE75697C14703937007882FD /* MainStoryboard_iPhone.storyboard in Resources */,
+				EE75697F14703937007882FD /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE75695E14703936007882FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE75697514703937007882FD /* main.m in Sources */,
+				EE75697914703937007882FD /* RIAppDelegate.m in Sources */,
+				EE75698214703937007882FD /* Arcosanti.xcdatamodeld in Sources */,
+				EE75698514703937007882FD /* RIMasterViewController.m in Sources */,
+				EE75698814703937007882FD /* RIDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EE75697114703937007882FD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE75697214703937007882FD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EE75697A14703937007882FD /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE75697B14703937007882FD /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		EE75697D14703937007882FD /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE75697E14703937007882FD /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE75698914703937007882FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE75698A14703937007882FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE75698C14703937007882FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Arcosanti/Arcosanti-Prefix.pch";
+				INFOPLIST_FILE = "Arcosanti/Arcosanti-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EE75698D14703937007882FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Arcosanti/Arcosanti-Prefix.pch";
+				INFOPLIST_FILE = "Arcosanti/Arcosanti-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE75695C14703935007882FD /* Build configuration list for PBXProject "Arcosanti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE75698914703937007882FD /* Debug */,
+				EE75698A14703937007882FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE75698B14703937007882FD /* Build configuration list for PBXNativeTarget "Arcosanti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE75698C14703937007882FD /* Debug */,
+				EE75698D14703937007882FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EE75698014703937007882FD /* Arcosanti.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EE75698114703937007882FD /* Arcosanti.xcdatamodel */,
+			);
+			currentVersion = EE75698114703937007882FD /* Arcosanti.xcdatamodel */;
+			path = Arcosanti.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EE75695914703935007882FD /* Project object */;
+}
