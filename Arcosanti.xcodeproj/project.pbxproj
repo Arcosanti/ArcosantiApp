@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE6909371471DF0D0070DD87 /* RIMasterCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6909351471DF0C0070DD87 /* RIMasterCellView.m */; };
+		EE6909381471DF0D0070DD87 /* RIMasterCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6909361471DF0D0070DD87 /* RIMasterCellView.xib */; };
+		EE69093A1471E2890070DD87 /* crete.png in Resources */ = {isa = PBXBuildFile; fileRef = EE6909391471E2890070DD87 /* crete.png */; };
+		EE69093C1472E2880070DD87 /* creteHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = EE69093B1472E2880070DD87 /* creteHighlight.png */; };
 		EE75696714703936007882FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE75696614703936007882FD /* UIKit.framework */; };
 		EE75696914703936007882FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE75696814703936007882FD /* Foundation.framework */; };
 		EE75696B14703936007882FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE75696A14703936007882FD /* CoreGraphics.framework */; };
@@ -19,27 +23,101 @@
 		EE75698214703937007882FD /* Arcosanti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE75698014703937007882FD /* Arcosanti.xcdatamodeld */; };
 		EE75698514703937007882FD /* RIMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE75698414703937007882FD /* RIMasterViewController.m */; };
 		EE75698814703937007882FD /* RIDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE75698714703937007882FD /* RIDetailViewController.m */; };
+		EE75699314703BD3007882FD /* RIArcosantiFeedDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE75699214703BD3007882FD /* RIArcosantiFeedDelegate.m */; };
+		EE7569A214708E61007882FD /* RIArcosantiStoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7569A114708E61007882FD /* RIArcosantiStoryParser.m */; };
+		EE7569B11470F099007882FD /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7569B01470F099007882FD /* Photo.m */; };
+		EE8145481473306100456D71 /* vaultIcon114px.png in Resources */ = {isa = PBXBuildFile; fileRef = EE8145471473306100456D71 /* vaultIcon114px.png */; };
+		EE81454B1473309900456D71 /* vaultIcon57px.png in Resources */ = {isa = PBXBuildFile; fileRef = EE81454A1473309900456D71 /* vaultIcon57px.png */; };
+		EE81454D147330A700456D71 /* vaultIcon72px.png in Resources */ = {isa = PBXBuildFile; fileRef = EE81454C147330A700456D71 /* vaultIcon72px.png */; };
+		EE81454F1473327800456D71 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EE81454E1473327800456D71 /* Default-Landscape~ipad.png */; };
+		EE8145511473328400456D71 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EE8145501473328400456D71 /* Default-Portrait~ipad.png */; };
+		EE81455414740F8500456D71 /* RIArcoTwitterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81455314740F8500456D71 /* RIArcoTwitterDelegate.m */; };
+		EE81456F14741CE400456D71 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81455714741CE400456D71 /* NSObject+SBJson.m */; };
+		EE81457014741CE400456D71 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81455A14741CE400456D71 /* SBJsonParser.m */; };
+		EE81457114741CE400456D71 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81455C14741CE400456D71 /* SBJsonStreamParser.m */; };
+		EE81457214741CE400456D71 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81455E14741CE400456D71 /* SBJsonStreamParserAccumulator.m */; };
+		EE81457314741CE400456D71 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81456014741CE400456D71 /* SBJsonStreamParserAdapter.m */; };
+		EE81457414741CE400456D71 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81456214741CE400456D71 /* SBJsonStreamParserState.m */; };
+		EE81457514741CE400456D71 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81456414741CE400456D71 /* SBJsonStreamWriter.m */; };
+		EE81457614741CE400456D71 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81456614741CE400456D71 /* SBJsonStreamWriterAccumulator.m */; };
+		EE81457714741CE400456D71 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81456814741CE400456D71 /* SBJsonStreamWriterState.m */; };
+		EE81457814741CE400456D71 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81456A14741CE400456D71 /* SBJsonTokeniser.m */; };
+		EE81457914741CE400456D71 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81456C14741CE400456D71 /* SBJsonUTF8Stream.m */; };
+		EE81457A14741CE400456D71 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81456E14741CE400456D71 /* SBJsonWriter.m */; };
+		EE8145811474231F00456D71 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8145801474231F00456D71 /* Event.m */; };
+		EE814583147437B000456D71 /* twitter_newbird_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = EE814582147437B000456D71 /* twitter_newbird_blue.png */; };
+		EE814585147437DA00456D71 /* vaultBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = EE814584147437DA00456D71 /* vaultBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE6909341471DF0C0070DD87 /* RIMasterCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIMasterCellView.h; sourceTree = "<group>"; };
+		EE6909351471DF0C0070DD87 /* RIMasterCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIMasterCellView.m; sourceTree = "<group>"; };
+		EE6909361471DF0D0070DD87 /* RIMasterCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RIMasterCellView.xib; sourceTree = "<group>"; };
+		EE6909391471E2890070DD87 /* crete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crete.png; sourceTree = "<group>"; };
+		EE69093B1472E2880070DD87 /* creteHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = creteHighlight.png; sourceTree = "<group>"; };
 		EE75696214703936007882FD /* Arcosanti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcosanti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE75696614703936007882FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EE75696814703936007882FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EE75696A14703936007882FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EE75696C14703936007882FD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		EE75697014703937007882FD /* Arcosanti-Info.plist */ = {isa = PBXFileReference; path = "Arcosanti-Info.plist"; sourceTree = "<group>"; };
+		EE75697014703937007882FD /* Arcosanti-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Arcosanti-Info.plist"; sourceTree = "<group>"; };
 		EE75697214703937007882FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EE75697414703937007882FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EE75697614703937007882FD /* Arcosanti-Prefix.pch */ = {isa = PBXFileReference; path = "Arcosanti-Prefix.pch"; sourceTree = "<group>"; };
-		EE75697714703937007882FD /* RIAppDelegate.h */ = {isa = PBXFileReference; path = RIAppDelegate.h; sourceTree = "<group>"; };
+		EE75697614703937007882FD /* Arcosanti-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Arcosanti-Prefix.pch"; sourceTree = "<group>"; };
+		EE75697714703937007882FD /* RIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIAppDelegate.h; sourceTree = "<group>"; };
 		EE75697814703937007882FD /* RIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIAppDelegate.m; sourceTree = "<group>"; };
 		EE75697B14703937007882FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		EE75697E14703937007882FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		EE75698114703937007882FD /* Arcosanti.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Arcosanti.xcdatamodel; sourceTree = "<group>"; };
-		EE75698314703937007882FD /* RIMasterViewController.h */ = {isa = PBXFileReference; path = RIMasterViewController.h; sourceTree = "<group>"; };
+		EE75698314703937007882FD /* RIMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIMasterViewController.h; sourceTree = "<group>"; };
 		EE75698414703937007882FD /* RIMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIMasterViewController.m; sourceTree = "<group>"; };
-		EE75698614703937007882FD /* RIDetailViewController.h */ = {isa = PBXFileReference; path = RIDetailViewController.h; sourceTree = "<group>"; };
+		EE75698614703937007882FD /* RIDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIDetailViewController.h; sourceTree = "<group>"; };
 		EE75698714703937007882FD /* RIDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIDetailViewController.m; sourceTree = "<group>"; };
+		EE75699114703BD3007882FD /* RIArcosantiFeedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIArcosantiFeedDelegate.h; sourceTree = "<group>"; };
+		EE75699214703BD3007882FD /* RIArcosantiFeedDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIArcosantiFeedDelegate.m; sourceTree = "<group>"; };
+		EE75699C14706830007882FD /* Arcosanti 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Arcosanti 2.xcdatamodel"; sourceTree = "<group>"; };
+		EE7569A014708E61007882FD /* RIArcosantiStoryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIArcosantiStoryParser.h; sourceTree = "<group>"; };
+		EE7569A114708E61007882FD /* RIArcosantiStoryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIArcosantiStoryParser.m; sourceTree = "<group>"; };
+		EE7569A71470ED63007882FD /* Arcosanti 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Arcosanti 3.xcdatamodel"; sourceTree = "<group>"; };
+		EE7569A81470EEAA007882FD /* Arcosanti 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Arcosanti 4.xcdatamodel"; sourceTree = "<group>"; };
+		EE7569AF1470F099007882FD /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = Arcosanti/Photo.h; sourceTree = "<group>"; };
+		EE7569B01470F099007882FD /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = Arcosanti/Photo.m; sourceTree = "<group>"; };
+		EE8145471473306100456D71 /* vaultIcon114px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vaultIcon114px.png; sourceTree = "<group>"; };
+		EE81454A1473309900456D71 /* vaultIcon57px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vaultIcon57px.png; sourceTree = "<group>"; };
+		EE81454C147330A700456D71 /* vaultIcon72px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vaultIcon72px.png; sourceTree = "<group>"; };
+		EE81454E1473327800456D71 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		EE8145501473328400456D71 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		EE81455214740F8500456D71 /* RIArcoTwitterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIArcoTwitterDelegate.h; sourceTree = "<group>"; };
+		EE81455314740F8500456D71 /* RIArcoTwitterDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIArcoTwitterDelegate.m; sourceTree = "<group>"; };
+		EE81455614741CE400456D71 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		EE81455714741CE400456D71 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		EE81455814741CE400456D71 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		EE81455914741CE400456D71 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		EE81455A14741CE400456D71 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		EE81455B14741CE400456D71 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		EE81455C14741CE400456D71 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		EE81455D14741CE400456D71 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		EE81455E14741CE400456D71 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		EE81455F14741CE400456D71 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		EE81456014741CE400456D71 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		EE81456114741CE400456D71 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		EE81456214741CE400456D71 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		EE81456314741CE400456D71 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		EE81456414741CE400456D71 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		EE81456514741CE400456D71 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		EE81456614741CE400456D71 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		EE81456714741CE400456D71 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		EE81456814741CE400456D71 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		EE81456914741CE400456D71 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		EE81456A14741CE400456D71 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		EE81456B14741CE400456D71 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		EE81456C14741CE400456D71 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		EE81456D14741CE400456D71 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		EE81456E14741CE400456D71 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		EE81457F1474231F00456D71 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Arcosanti/Event.h; sourceTree = "<group>"; };
+		EE8145801474231F00456D71 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Arcosanti/Event.m; sourceTree = "<group>"; };
+		EE814582147437B000456D71 /* twitter_newbird_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_newbird_blue.png; sourceTree = "<group>"; };
+		EE814584147437DA00456D71 /* vaultBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vaultBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +135,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE69092D1471D6FB0070DD87 /* interface assets */ = {
+			isa = PBXGroup;
+			children = (
+				EE814584147437DA00456D71 /* vaultBackground.png */,
+				EE814582147437B000456D71 /* twitter_newbird_blue.png */,
+				EE69093B1472E2880070DD87 /* creteHighlight.png */,
+				EE6909391471E2890070DD87 /* crete.png */,
+			);
+			name = "interface assets";
+			sourceTree = "<group>";
+		};
 		EE75695714703935007882FD = {
 			isa = PBXGroup;
 			children = (
+				EE81457F1474231F00456D71 /* Event.h */,
+				EE8145801474231F00456D71 /* Event.m */,
+				EE8145501473328400456D71 /* Default-Portrait~ipad.png */,
+				EE81454E1473327800456D71 /* Default-Landscape~ipad.png */,
+				EE81454C147330A700456D71 /* vaultIcon72px.png */,
+				EE81454A1473309900456D71 /* vaultIcon57px.png */,
+				EE8145471473306100456D71 /* vaultIcon114px.png */,
+				EE7569AF1470F099007882FD /* Photo.h */,
+				EE7569B01470F099007882FD /* Photo.m */,
+				EE81455514741CE400456D71 /* SBjson */,
 				EE75696E14703936007882FD /* Arcosanti */,
 				EE75696514703936007882FD /* Frameworks */,
 				EE75696314703936007882FD /* Products */,
@@ -88,16 +187,26 @@
 		EE75696E14703936007882FD /* Arcosanti */ = {
 			isa = PBXGroup;
 			children = (
+				EE69092D1471D6FB0070DD87 /* interface assets */,
 				EE75697714703937007882FD /* RIAppDelegate.h */,
 				EE75697814703937007882FD /* RIAppDelegate.m */,
+				EE7569A014708E61007882FD /* RIArcosantiStoryParser.h */,
+				EE7569A114708E61007882FD /* RIArcosantiStoryParser.m */,
 				EE75697A14703937007882FD /* MainStoryboard_iPhone.storyboard */,
 				EE75697D14703937007882FD /* MainStoryboard_iPad.storyboard */,
 				EE75698314703937007882FD /* RIMasterViewController.h */,
 				EE75698414703937007882FD /* RIMasterViewController.m */,
 				EE75698614703937007882FD /* RIDetailViewController.h */,
 				EE75698714703937007882FD /* RIDetailViewController.m */,
+				EE6909341471DF0C0070DD87 /* RIMasterCellView.h */,
+				EE6909351471DF0C0070DD87 /* RIMasterCellView.m */,
+				EE6909361471DF0D0070DD87 /* RIMasterCellView.xib */,
 				EE75698014703937007882FD /* Arcosanti.xcdatamodeld */,
 				EE75696F14703937007882FD /* Supporting Files */,
+				EE75699114703BD3007882FD /* RIArcosantiFeedDelegate.h */,
+				EE75699214703BD3007882FD /* RIArcosantiFeedDelegate.m */,
+				EE81455214740F8500456D71 /* RIArcoTwitterDelegate.h */,
+				EE81455314740F8500456D71 /* RIArcoTwitterDelegate.m */,
 			);
 			path = Arcosanti;
 			sourceTree = "<group>";
@@ -111,6 +220,39 @@
 				EE75697614703937007882FD /* Arcosanti-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EE81455514741CE400456D71 /* SBjson */ = {
+			isa = PBXGroup;
+			children = (
+				EE81455614741CE400456D71 /* NSObject+SBJson.h */,
+				EE81455714741CE400456D71 /* NSObject+SBJson.m */,
+				EE81455814741CE400456D71 /* SBJson.h */,
+				EE81455914741CE400456D71 /* SBJsonParser.h */,
+				EE81455A14741CE400456D71 /* SBJsonParser.m */,
+				EE81455B14741CE400456D71 /* SBJsonStreamParser.h */,
+				EE81455C14741CE400456D71 /* SBJsonStreamParser.m */,
+				EE81455D14741CE400456D71 /* SBJsonStreamParserAccumulator.h */,
+				EE81455E14741CE400456D71 /* SBJsonStreamParserAccumulator.m */,
+				EE81455F14741CE400456D71 /* SBJsonStreamParserAdapter.h */,
+				EE81456014741CE400456D71 /* SBJsonStreamParserAdapter.m */,
+				EE81456114741CE400456D71 /* SBJsonStreamParserState.h */,
+				EE81456214741CE400456D71 /* SBJsonStreamParserState.m */,
+				EE81456314741CE400456D71 /* SBJsonStreamWriter.h */,
+				EE81456414741CE400456D71 /* SBJsonStreamWriter.m */,
+				EE81456514741CE400456D71 /* SBJsonStreamWriterAccumulator.h */,
+				EE81456614741CE400456D71 /* SBJsonStreamWriterAccumulator.m */,
+				EE81456714741CE400456D71 /* SBJsonStreamWriterState.h */,
+				EE81456814741CE400456D71 /* SBJsonStreamWriterState.m */,
+				EE81456914741CE400456D71 /* SBJsonTokeniser.h */,
+				EE81456A14741CE400456D71 /* SBJsonTokeniser.m */,
+				EE81456B14741CE400456D71 /* SBJsonUTF8Stream.h */,
+				EE81456C14741CE400456D71 /* SBJsonUTF8Stream.m */,
+				EE81456D14741CE400456D71 /* SBJsonWriter.h */,
+				EE81456E14741CE400456D71 /* SBJsonWriter.m */,
+			);
+			name = SBjson;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +309,16 @@
 				EE75697314703937007882FD /* InfoPlist.strings in Resources */,
 				EE75697C14703937007882FD /* MainStoryboard_iPhone.storyboard in Resources */,
 				EE75697F14703937007882FD /* MainStoryboard_iPad.storyboard in Resources */,
+				EE6909381471DF0D0070DD87 /* RIMasterCellView.xib in Resources */,
+				EE69093A1471E2890070DD87 /* crete.png in Resources */,
+				EE69093C1472E2880070DD87 /* creteHighlight.png in Resources */,
+				EE8145481473306100456D71 /* vaultIcon114px.png in Resources */,
+				EE81454B1473309900456D71 /* vaultIcon57px.png in Resources */,
+				EE81454D147330A700456D71 /* vaultIcon72px.png in Resources */,
+				EE81454F1473327800456D71 /* Default-Landscape~ipad.png in Resources */,
+				EE8145511473328400456D71 /* Default-Portrait~ipad.png in Resources */,
+				EE814583147437B000456D71 /* twitter_newbird_blue.png in Resources */,
+				EE814585147437DA00456D71 /* vaultBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +334,24 @@
 				EE75698214703937007882FD /* Arcosanti.xcdatamodeld in Sources */,
 				EE75698514703937007882FD /* RIMasterViewController.m in Sources */,
 				EE75698814703937007882FD /* RIDetailViewController.m in Sources */,
+				EE75699314703BD3007882FD /* RIArcosantiFeedDelegate.m in Sources */,
+				EE7569A214708E61007882FD /* RIArcosantiStoryParser.m in Sources */,
+				EE7569B11470F099007882FD /* Photo.m in Sources */,
+				EE6909371471DF0D0070DD87 /* RIMasterCellView.m in Sources */,
+				EE81455414740F8500456D71 /* RIArcoTwitterDelegate.m in Sources */,
+				EE81456F14741CE400456D71 /* NSObject+SBJson.m in Sources */,
+				EE81457014741CE400456D71 /* SBJsonParser.m in Sources */,
+				EE81457114741CE400456D71 /* SBJsonStreamParser.m in Sources */,
+				EE81457214741CE400456D71 /* SBJsonStreamParserAccumulator.m in Sources */,
+				EE81457314741CE400456D71 /* SBJsonStreamParserAdapter.m in Sources */,
+				EE81457414741CE400456D71 /* SBJsonStreamParserState.m in Sources */,
+				EE81457514741CE400456D71 /* SBJsonStreamWriter.m in Sources */,
+				EE81457614741CE400456D71 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				EE81457714741CE400456D71 /* SBJsonStreamWriterState.m in Sources */,
+				EE81457814741CE400456D71 /* SBJsonTokeniser.m in Sources */,
+				EE81457914741CE400456D71 /* SBJsonUTF8Stream.m in Sources */,
+				EE81457A14741CE400456D71 /* SBJsonWriter.m in Sources */,
+				EE8145811474231F00456D71 /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,10 +446,14 @@
 		EE75698D14703937007882FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jeffrey Kunzelman (6PW59RRNK8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jeffrey Kunzelman (6PW59RRNK8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Arcosanti/Arcosanti-Prefix.pch";
 				INFOPLIST_FILE = "Arcosanti/Arcosanti-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "467864B9-7746-406B-95C4-34D7271ADBEE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "467864B9-7746-406B-95C4-34D7271ADBEE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -303,6 +477,7 @@
 				EE75698D14703937007882FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -310,9 +485,12 @@
 		EE75698014703937007882FD /* Arcosanti.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				EE7569A71470ED63007882FD /* Arcosanti 3.xcdatamodel */,
+				EE75699C14706830007882FD /* Arcosanti 2.xcdatamodel */,
+				EE7569A81470EEAA007882FD /* Arcosanti 4.xcdatamodel */,
 				EE75698114703937007882FD /* Arcosanti.xcdatamodel */,
 			);
-			currentVersion = EE75698114703937007882FD /* Arcosanti.xcdatamodel */;
+			currentVersion = EE7569A81470EEAA007882FD /* Arcosanti 4.xcdatamodel */;
 			path = Arcosanti.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
