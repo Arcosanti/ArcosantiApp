@@ -307,14 +307,14 @@
             NSLog(@"url base: %@",arcoWWW);
             NSString *webPage = [NSString stringWithFormat:@"<html><STYLE TYPE=\"text/css\"><!-- BODY {border:1px;border-color:#FFFFFF;font-family:\"Helvetica Neue\"; font-size:20px;margin-top:0px;margin-right:18px;margin-left:18px} img{padding:18px;padding-left:0px;padding-top:5px;}.headlineTextBox {background:#AAAAAA;padding-bottom:2px;padding-left:5px;margin-bottom:5px;margin-left:-18px;margin-right:-18px;font-size:32px;font-weight:bold;} --></STYLE><body><div class=\"headlineTextBox\">%@</div>%@</body></html>",[selectedEvent.title capitalizedString] , selectedEvent.storyHTML];
             [self.detailViewController.webView loadHTMLString:webPage baseURL:arcoWWW];
+            [self.detailViewController setEventObject:selectedEvent];
             self.detailViewController.webView.hidden = NO;
         }
         if ([selectedEvent.source isEqualToString:@"arcoTwitter"])
         {
             NSURL *linkURL = [NSURL URLWithString:selectedEvent.link];
             NSURLRequest *linkRequest = [[NSURLRequest alloc]initWithURL:linkURL];
-            
-           
+            [self.detailViewController setEventObject:selectedEvent];           
             [self.detailViewController.webView loadRequest:linkRequest];
             self.detailViewController.webView.hidden = NO;
         }

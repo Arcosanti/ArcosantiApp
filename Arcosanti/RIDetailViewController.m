@@ -7,9 +7,14 @@
 //
 
 #import "RIDetailViewController.h"
+#import <Twitter/Twitter.h>
+#import <Accounts/Accounts.h>
+
 
 @interface RIDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (strong, nonatomic) UIPopoverController *tweetPopoverController;
+@property (strong, nonatomic) UIStoryboardPopoverSegue *tweetPopoverSegue;
 - (void)configureView;
 @end
 
@@ -22,6 +27,10 @@
 @synthesize webView = _webView;
 @synthesize URLitem = _URLitem;
 @synthesize externalURL = _externalURL;
+@synthesize eventObject = _eventObject;
+@synthesize event = _event;
+@synthesize tweetPopoverController = _tweetPopoverController;
+@synthesize tweetPopoverSegue = _tweetPopoverSegue;
 
 
 #pragma mark - Managing the detail item
@@ -41,6 +50,15 @@
     }     
     
     
+}
+
+- (void)setEventObject:(id)newEventObject
+{
+    if (_eventObject != newEventObject) {
+        _eventObject = newEventObject;
+        self.event = newEventObject;
+       // NSLog(@"Event: %@",_event);
+    }
 }
 
 - (void)setTitleTextItem:(id)newTitleText
@@ -97,6 +115,30 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+
+#pragma mark - Button Actions
+
+- (void)displayText:(NSString *)text {
+//	self.outputTextView.text = text;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showTweetPopover"]) 
+    {
+        
+        NSLog(@"%@",[segue destinationViewController]);
+        self.tweetPopoverSegue = (UIStoryboardPopoverSegue*) segue;
+        
+        //[[segue destinationViewController] setDelegate:self];
+        
+        //self.tweetPopoverController = [segue destinationViewController];
+        
+        [[segue destinationViewController] setEventObject:_eventObject]; 
+    }
+}
+
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -110,8 +152,19 @@
      //   [self.navigationController setNavigationBarHidden:YES animated:YES];
     }
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dismissTweetPopover:) 
+                                                 name:@"TweetPosted"
+                                               object:nil];
     
 }
+
+-(void)dismissTweetPopover:(NSNotification *)notif
+{
+    //[self.tweetPopoverSegue.popoverController dismissPopoverAnimated:YES];
+    NSLog(@"dissmiss tweet");
+}
+  
 
 - (void)viewDidUnload
 {
@@ -133,11 +186,13 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
 	[super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -167,7 +222,7 @@
 {
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    //[self.navigationController setNavigationBarHidden:YES animated:YES];
     self.masterPopoverController = nil;
 }
 

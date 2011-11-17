@@ -18,6 +18,7 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize eventToLoad = _eventToLoad;
 
+
 -(void) parseDownloadThread
 {
     //   NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -153,11 +154,21 @@
     
     if (!(existingEvent))
     {
-        Event *eventToInsert = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:_managedObjectContext];
         
+        
+        //use bit.ly to shorten link for tweeting
+        NSString *bitlyLinkText = [NSString stringWithFormat:@"http://api.bitly.com/v3/shorten?login=spacetrucker&apiKey=R_9a10371c7a346374f8e37fd884a7d6e6&longUrl=%@&format=json",[newEvent objectForKey:@"link"]]; 
+        NSURL *bitlyURL = [NSURL URLWithString:bitlyLinkText];                           
+        NSData *bitlyResponseData = [NSData dataWithContentsOfURL:bitlyURL];        
+        NSDictionary *bitlyResponseDict = [NSJSONSerialization JSONObjectWithData:bitlyResponseData  options:0 error:nil]; 
+        NSDictionary *bitlyDataDict = [NSDictionary dictionaryWithDictionary:[bitlyResponseDict objectForKey:@"data"]];
+        
+
+        Event *eventToInsert = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:_managedObjectContext];
         eventToInsert.title = [newEvent objectForKey:@"title"];
         eventToInsert.storyHTML = [newEvent objectForKey:@"description"];
-        eventToInsert.link = [newEvent objectForKey:@"link"];
+        eventToInsert.link = [bitlyDataDict objectForKey:@"url"];
+        NSLog(@"ShortendLink: %@",eventToInsert.link);
         eventToInsert.category = [newEvent objectForKey:@"category"];
         eventToInsert.timeStamp = eventDate;
         eventToInsert.source = @"today";
@@ -173,7 +184,7 @@
         eventToInsert.previewImagePath = previewPhotoFilePath;
         eventToInsert.storyText = storyParser.cleanText;
         
-        NSLog(@"clean text: %@",storyParser.cleanText);
+        //NSLog(@"clean text: %@",storyParser.cleanText);
         
         NSFileManager *manager = [NSFileManager defaultManager];
         BOOL directoryExists = [manager changeCurrentDirectoryPath:[NSString stringWithFormat:@"Documents/%@",[previewPhoto stringByDeletingLastPathComponent]]];

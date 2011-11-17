@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE0BBF27147565F500551217 /* siltcastTweetBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0BBF26147565F500551217 /* siltcastTweetBtn.png */; };
+		EE0BBF2A147567D200551217 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0BBF29147567D200551217 /* Accounts.framework */; };
+		EE0BBF2C147567E500551217 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0BBF2B147567E500551217 /* Twitter.framework */; };
+		EE0BBF2F14756D7C00551217 /* RIRetweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0BBF2E14756D7C00551217 /* RIRetweetViewController.m */; };
+		EE0BBF3114756F6200551217 /* redSiltBak.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0BBF3014756F6200551217 /* redSiltBak.png */; };
 		EE3B1849147492BF0047FF9B /* RICoverPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3B1848147492BF0047FF9B /* RICoverPageViewController.m */; };
 		EE6909371471DF0D0070DD87 /* RIMasterCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6909351471DF0C0070DD87 /* RIMasterCellView.m */; };
 		EE6909381471DF0D0070DD87 /* RIMasterCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6909361471DF0D0070DD87 /* RIMasterCellView.xib */; };
@@ -55,6 +60,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE0BBF26147565F500551217 /* siltcastTweetBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = siltcastTweetBtn.png; sourceTree = "<group>"; };
+		EE0BBF29147567D200551217 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		EE0BBF2B147567E500551217 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		EE0BBF2D14756D7C00551217 /* RIRetweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIRetweetViewController.h; sourceTree = "<group>"; };
+		EE0BBF2E14756D7C00551217 /* RIRetweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIRetweetViewController.m; sourceTree = "<group>"; };
+		EE0BBF3014756F6200551217 /* redSiltBak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redSiltBak.png; path = "../../../../Desktop/arcosanti ipad app image assets/redSiltBak.png"; sourceTree = "<group>"; };
 		EE3B1847147492BF0047FF9B /* RICoverPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RICoverPageViewController.h; sourceTree = "<group>"; };
 		EE3B1848147492BF0047FF9B /* RICoverPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RICoverPageViewController.m; sourceTree = "<group>"; };
 		EE6909341471DF0C0070DD87 /* RIMasterCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIMasterCellView.h; sourceTree = "<group>"; };
@@ -136,6 +147,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE0BBF2C147567E500551217 /* Twitter.framework in Frameworks */,
+				EE0BBF2A147567D200551217 /* Accounts.framework in Frameworks */,
 				EE75696714703936007882FD /* UIKit.framework in Frameworks */,
 				EE75696914703936007882FD /* Foundation.framework in Frameworks */,
 				EE75696B14703936007882FD /* CoreGraphics.framework in Frameworks */,
@@ -149,6 +162,8 @@
 		EE69092D1471D6FB0070DD87 /* interface assets */ = {
 			isa = PBXGroup;
 			children = (
+				EE0BBF3014756F6200551217 /* redSiltBak.png */,
+				EE0BBF26147565F500551217 /* siltcastTweetBtn.png */,
 				EE8145501473328400456D71 /* Default-Portrait~ipad.png */,
 				EE81454E1473327800456D71 /* Default-Landscape~ipad.png */,
 				EE81454C147330A700456D71 /* vaultIcon72px.png */,
@@ -169,6 +184,8 @@
 		EE75695714703935007882FD = {
 			isa = PBXGroup;
 			children = (
+				EE0BBF2B147567E500551217 /* Twitter.framework */,
+				EE0BBF29147567D200551217 /* Accounts.framework */,
 				EE81457F1474231F00456D71 /* Event.h */,
 				EE8145801474231F00456D71 /* Event.m */,
 				EE7569AF1470F099007882FD /* Photo.h */,
@@ -224,6 +241,8 @@
 				EE81455314740F8500456D71 /* RIArcoTwitterDelegate.m */,
 				EE3B1847147492BF0047FF9B /* RICoverPageViewController.h */,
 				EE3B1848147492BF0047FF9B /* RICoverPageViewController.m */,
+				EE0BBF2D14756D7C00551217 /* RIRetweetViewController.h */,
+				EE0BBF2E14756D7C00551217 /* RIRetweetViewController.m */,
 			);
 			path = Arcosanti;
 			sourceTree = "<group>";
@@ -340,6 +359,8 @@
 				EE86B61A14743DFC00CF241E /* creteTweetBak.png in Resources */,
 				EE86B61C147442A200CF241E /* creteTweetBakHi.png in Resources */,
 				EEEA1C8514748EE100FE0CA1 /* VAULTSRAINBOW.png in Resources */,
+				EE0BBF27147565F500551217 /* siltcastTweetBtn.png in Resources */,
+				EE0BBF3114756F6200551217 /* redSiltBak.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +395,7 @@
 				EE81457A14741CE400456D71 /* SBJsonWriter.m in Sources */,
 				EE8145811474231F00456D71 /* Event.m in Sources */,
 				EE3B1849147492BF0047FF9B /* RICoverPageViewController.m in Sources */,
+				EE0BBF2F14756D7C00551217 /* RIRetweetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

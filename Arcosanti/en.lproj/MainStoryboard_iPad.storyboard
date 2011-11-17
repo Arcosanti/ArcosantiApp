@@ -29,11 +29,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="vaultBackground.png" id="r2P-jS-vUL">
-                                <rect key="frame" x="-35" y="-178" width="768" height="1098"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <webView hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" scalesPageToFit="YES" id="KDL-ga-3de">
-                                <rect key="frame" x="34" y="3" width="635" height="768"/>
+                                <rect key="frame" x="34" y="43" width="635" height="725"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </webView>
@@ -42,15 +42,76 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="53"/>
+                    <navigationItem key="navigationItem" id="53">
+                        <barButtonItem key="rightBarButtonItem" image="siltcastTweetBtn.png" id="gjX-S7-fxq">
+                            <connections>
+                                <action selector="sendReTweet:" destination="4" id="zgB-LT-jh7"/>
+                                <segue destination="brj-aj-fjl" kind="popover" identifier="showTweetPopover" popoverAnchorBarButtonItem="gjX-S7-fxq" id="iua-hv-5eP">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="webView" destination="KDL-ga-3de" id="EJc-sA-YrS"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="448" y="248"/>
+        </scene>
+        <scene sceneID="Io5-3h-zCO">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEX-xR-cFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="brj-aj-fjl" customClass="RIRetweetViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lM1-bi-zKK">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="redSiltBak.png" id="evB-0C-Bze">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="VXg-jU-tNQ">
+                                <rect key="frame" x="20" y="28" width="360" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.3333333432674408" green="0.42745101451873779" blue="0.52941179275512695" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="jMD-Ag-VCM">
+                                <rect key="frame" x="0.0" y="156" width="400" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ILc-KG-XLJ"/>
+                                    <barButtonItem title="Send" id="WHe-a9-psd">
+                                        <color key="tintColor" red="0.32549020649999999" green="0.63921570780000003" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="sendCustomTweet:" destination="brj-aj-fjl" id="8Vg-01-tjG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="hTs-T7-K6Q">
+                                <rect key="frame" x="0.0" y="1" width="400" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="statusLbl" destination="hTs-T7-K6Q" id="z9L-H8-I3b"/>
+                        <outlet property="textView" destination="VXg-jU-tNQ" id="aL8-uN-gBz"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1360" y="385"/>
         </scene>
         <scene sceneID="18">
             <objects>
@@ -160,7 +221,7 @@
                             <outlet property="delegate" destination="19" id="21"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Arcosanti News" id="40"/>
+                    <navigationItem key="navigationItem" title="Urban Effect" id="40"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="859" y="-631"/>
@@ -208,10 +269,11 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="42" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="43">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackTranslucent" prompted="NO"/>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.70000000000000007" contentMode="scaleToFill" barStyle="blackTranslucent" id="43">
+                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.97826086960000003" green="0.91848131079999995" blue="0.73914263440000005" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.32549020649999999" green="0.63921570780000003" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="4" kind="relationship" relationship="rootViewController" id="52"/>
@@ -227,7 +289,9 @@
         <image name="creteHighlight.png" width="320" height="103"/>
         <image name="creteTweetBak.png" width="320" height="85"/>
         <image name="creteTweetBakHi.png" width="320" height="85"/>
+        <image name="redSiltBak.png" width="400" height="200"/>
         <image name="siltcastTweet.png" width="216" height="148"/>
+        <image name="siltcastTweetBtn.png" width="37" height="37"/>
         <image name="vaultBackground.png" width="768" height="1024"/>
     </resources>
     <classes>
@@ -259,6 +323,14 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RIMasterViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="masterCellView" candidateClass="RIMasterCellView"/>
+            </relationships>
+        </class>
+        <class className="RIRetweetViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RIRetweetViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sendCustomTweet:"/>
+                <relationship kind="outlet" name="statusLbl" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
             </relationships>
         </class>
     </classes>
