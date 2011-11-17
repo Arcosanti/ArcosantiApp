@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE3B1849147492BF0047FF9B /* RICoverPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3B1848147492BF0047FF9B /* RICoverPageViewController.m */; };
 		EE6909371471DF0D0070DD87 /* RIMasterCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6909351471DF0C0070DD87 /* RIMasterCellView.m */; };
 		EE6909381471DF0D0070DD87 /* RIMasterCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6909361471DF0D0070DD87 /* RIMasterCellView.xib */; };
 		EE69093A1471E2890070DD87 /* crete.png in Resources */ = {isa = PBXBuildFile; fileRef = EE6909391471E2890070DD87 /* crete.png */; };
@@ -47,9 +48,15 @@
 		EE8145811474231F00456D71 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8145801474231F00456D71 /* Event.m */; };
 		EE814583147437B000456D71 /* twitter_newbird_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = EE814582147437B000456D71 /* twitter_newbird_blue.png */; };
 		EE814585147437DA00456D71 /* vaultBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = EE814584147437DA00456D71 /* vaultBackground.png */; };
+		EE86B61714743CA800CF241E /* siltcastTweet.png in Resources */ = {isa = PBXBuildFile; fileRef = EE86B61614743CA800CF241E /* siltcastTweet.png */; };
+		EE86B61A14743DFC00CF241E /* creteTweetBak.png in Resources */ = {isa = PBXBuildFile; fileRef = EE86B61914743DFC00CF241E /* creteTweetBak.png */; };
+		EE86B61C147442A200CF241E /* creteTweetBakHi.png in Resources */ = {isa = PBXBuildFile; fileRef = EE86B61B147442A200CF241E /* creteTweetBakHi.png */; };
+		EEEA1C8514748EE100FE0CA1 /* VAULTSRAINBOW.png in Resources */ = {isa = PBXBuildFile; fileRef = EEEA1C8414748EE100FE0CA1 /* VAULTSRAINBOW.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE3B1847147492BF0047FF9B /* RICoverPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RICoverPageViewController.h; sourceTree = "<group>"; };
+		EE3B1848147492BF0047FF9B /* RICoverPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RICoverPageViewController.m; sourceTree = "<group>"; };
 		EE6909341471DF0C0070DD87 /* RIMasterCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIMasterCellView.h; sourceTree = "<group>"; };
 		EE6909351471DF0C0070DD87 /* RIMasterCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIMasterCellView.m; sourceTree = "<group>"; };
 		EE6909361471DF0D0070DD87 /* RIMasterCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RIMasterCellView.xib; sourceTree = "<group>"; };
@@ -82,11 +89,11 @@
 		EE7569A81470EEAA007882FD /* Arcosanti 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Arcosanti 4.xcdatamodel"; sourceTree = "<group>"; };
 		EE7569AF1470F099007882FD /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = Arcosanti/Photo.h; sourceTree = "<group>"; };
 		EE7569B01470F099007882FD /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = Arcosanti/Photo.m; sourceTree = "<group>"; };
-		EE8145471473306100456D71 /* vaultIcon114px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vaultIcon114px.png; sourceTree = "<group>"; };
-		EE81454A1473309900456D71 /* vaultIcon57px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vaultIcon57px.png; sourceTree = "<group>"; };
-		EE81454C147330A700456D71 /* vaultIcon72px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vaultIcon72px.png; sourceTree = "<group>"; };
-		EE81454E1473327800456D71 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		EE8145501473328400456D71 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		EE8145471473306100456D71 /* vaultIcon114px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vaultIcon114px.png; path = ../vaultIcon114px.png; sourceTree = "<group>"; };
+		EE81454A1473309900456D71 /* vaultIcon57px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vaultIcon57px.png; path = ../vaultIcon57px.png; sourceTree = "<group>"; };
+		EE81454C147330A700456D71 /* vaultIcon72px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vaultIcon72px.png; path = ../vaultIcon72px.png; sourceTree = "<group>"; };
+		EE81454E1473327800456D71 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		EE8145501473328400456D71 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		EE81455214740F8500456D71 /* RIArcoTwitterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIArcoTwitterDelegate.h; sourceTree = "<group>"; };
 		EE81455314740F8500456D71 /* RIArcoTwitterDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIArcoTwitterDelegate.m; sourceTree = "<group>"; };
 		EE81455614741CE400456D71 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
@@ -118,6 +125,10 @@
 		EE8145801474231F00456D71 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Arcosanti/Event.m; sourceTree = "<group>"; };
 		EE814582147437B000456D71 /* twitter_newbird_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_newbird_blue.png; sourceTree = "<group>"; };
 		EE814584147437DA00456D71 /* vaultBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vaultBackground.png; sourceTree = "<group>"; };
+		EE86B61614743CA800CF241E /* siltcastTweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = siltcastTweet.png; sourceTree = "<group>"; };
+		EE86B61914743DFC00CF241E /* creteTweetBak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = creteTweetBak.png; sourceTree = "<group>"; };
+		EE86B61B147442A200CF241E /* creteTweetBakHi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = creteTweetBakHi.png; sourceTree = "<group>"; };
+		EEEA1C8414748EE100FE0CA1 /* VAULTSRAINBOW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VAULTSRAINBOW.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +149,15 @@
 		EE69092D1471D6FB0070DD87 /* interface assets */ = {
 			isa = PBXGroup;
 			children = (
+				EE8145501473328400456D71 /* Default-Portrait~ipad.png */,
+				EE81454E1473327800456D71 /* Default-Landscape~ipad.png */,
+				EE81454C147330A700456D71 /* vaultIcon72px.png */,
+				EE81454A1473309900456D71 /* vaultIcon57px.png */,
+				EE8145471473306100456D71 /* vaultIcon114px.png */,
+				EEEA1C8414748EE100FE0CA1 /* VAULTSRAINBOW.png */,
+				EE86B61B147442A200CF241E /* creteTweetBakHi.png */,
+				EE86B61914743DFC00CF241E /* creteTweetBak.png */,
+				EE86B61614743CA800CF241E /* siltcastTweet.png */,
 				EE814584147437DA00456D71 /* vaultBackground.png */,
 				EE814582147437B000456D71 /* twitter_newbird_blue.png */,
 				EE69093B1472E2880070DD87 /* creteHighlight.png */,
@@ -151,11 +171,6 @@
 			children = (
 				EE81457F1474231F00456D71 /* Event.h */,
 				EE8145801474231F00456D71 /* Event.m */,
-				EE8145501473328400456D71 /* Default-Portrait~ipad.png */,
-				EE81454E1473327800456D71 /* Default-Landscape~ipad.png */,
-				EE81454C147330A700456D71 /* vaultIcon72px.png */,
-				EE81454A1473309900456D71 /* vaultIcon57px.png */,
-				EE8145471473306100456D71 /* vaultIcon114px.png */,
 				EE7569AF1470F099007882FD /* Photo.h */,
 				EE7569B01470F099007882FD /* Photo.m */,
 				EE81455514741CE400456D71 /* SBjson */,
@@ -207,6 +222,8 @@
 				EE75699214703BD3007882FD /* RIArcosantiFeedDelegate.m */,
 				EE81455214740F8500456D71 /* RIArcoTwitterDelegate.h */,
 				EE81455314740F8500456D71 /* RIArcoTwitterDelegate.m */,
+				EE3B1847147492BF0047FF9B /* RICoverPageViewController.h */,
+				EE3B1848147492BF0047FF9B /* RICoverPageViewController.m */,
 			);
 			path = Arcosanti;
 			sourceTree = "<group>";
@@ -319,6 +336,10 @@
 				EE8145511473328400456D71 /* Default-Portrait~ipad.png in Resources */,
 				EE814583147437B000456D71 /* twitter_newbird_blue.png in Resources */,
 				EE814585147437DA00456D71 /* vaultBackground.png in Resources */,
+				EE86B61714743CA800CF241E /* siltcastTweet.png in Resources */,
+				EE86B61A14743DFC00CF241E /* creteTweetBak.png in Resources */,
+				EE86B61C147442A200CF241E /* creteTweetBakHi.png in Resources */,
+				EEEA1C8514748EE100FE0CA1 /* VAULTSRAINBOW.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +373,7 @@
 				EE81457914741CE400456D71 /* SBJsonUTF8Stream.m in Sources */,
 				EE81457A14741CE400456D71 /* SBJsonWriter.m in Sources */,
 				EE8145811474231F00456D71 /* Event.m in Sources */,
+				EE3B1849147492BF0047FF9B /* RICoverPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,8 @@
 #import "RIAppDelegate.h"
 
 #import "RIMasterViewController.h"
+#import "RIArcosantiFeedDelegate.h"
+#import "RIArcoTwitterDelegate.h"
 
 @implementation RIAppDelegate
 
@@ -16,6 +18,8 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize todayFeedDelegate = _todayFeedDelegate;
+@synthesize arcoTweetDelegate = _arcoTweetDelegate;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -33,8 +37,17 @@
         RIMasterViewController *controller = (RIMasterViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     }
+    
+    self.todayFeedDelegate = [[RIArcosantiFeedDelegate alloc]init];
+    [_todayFeedDelegate getLatestEvents];
+    
+    self.arcoTweetDelegate = [[RIArcoTwitterDelegate alloc]init];
+    [_arcoTweetDelegate getLatestTweets];
+    
     return YES;
 }
+
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

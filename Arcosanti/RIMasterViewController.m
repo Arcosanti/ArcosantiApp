@@ -9,6 +9,10 @@
 #import "RIMasterViewController.h"
 
 #import "RIDetailViewController.h"
+#import "RIMasterCellView.h"
+#import "Event.h"
+#import "RICoverPageViewController.h"
+#import "RIAppDelegate.h"
 
 @interface RIMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -19,6 +23,8 @@
 @synthesize detailViewController = _detailViewController;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
+@synthesize masterCellView = _masterCellView;
+@synthesize coverPage = _coverPage;
 
 - (void)awakeFromNib
 {
@@ -40,13 +46,57 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    
 	// Do any additional setup after loading the view, typically from a nib.
     self.detailViewController = (RIDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     // Set up the edit and add buttons.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+   // self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
-    self.navigationItem.rightBarButtonItem = addButton;
+   UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(checkForUpdates)];
+    
+   self.navigationItem.rightBarButtonItem = addButton;
+
+
+    UIDevice *device = [UIDevice currentDevice];					//Get the device object
+	[device beginGeneratingDeviceOrientationNotifications];			//Tell it to start monitoring the accelerometer for orientation
+	
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];	//Get the notification centre for the app
+	
+    [nc addObserver:self											//Add yourself as an observer
+		   selector:@selector(orientationChanged:)
+			   name:UIDeviceOrientationDidChangeNotification
+			 object:device];
+    
+
+}
+
+- (void)orientationChanged:(NSNotification *)note
+{
+	NSLog(@"Orientation  has changed: %d", [[note object] orientation]);
+    
+    if (([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) || 
+        ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown)) 
+    {
+        if ([_detailViewController.webView isHidden])
+        {
+            
+            self.detailViewController.webView.hidden = NO;
+            
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+            
+            Event *selectedEvent = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+            
+            NSURL *arcoWWW = [NSURL URLWithString:@"http://www.arcosanti.org"];
+            //NSURL *arcoWWW = [NSURL URLWithString:NSHomeDirectory()];
+            NSLog(@"url base: %@",arcoWWW);
+            NSString *webPage = [NSString stringWithFormat:@"<html><STYLE TYPE=\"text/css\"><!-- BODY {border:1px;border-color:#FFFFFF;font-family:\"Helvetica Neue\"; font-size:20px;margin-top:0px;margin-right:18px;margin-left:18px} img{padding:18px;padding-left:0px;padding-top:5px;}.headlineTextBox {background:#AAAAAA;padding-bottom:2px;padding-left:5px;margin-bottom:5px;margin-left:-18px;margin-right:-18px;font-size:32px;font-weight:bold;} --></STYLE><body><div class=\"headlineTextBox\">%@</div>%@</body></html>",[selectedEvent.title capitalizedString] , selectedEvent.storyHTML];
+            [self.detailViewController.webView loadHTMLString:webPage baseURL:arcoWWW];
+            self.detailViewController.webView.hidden = NO;
+   
+        }
+    }
+
 }
 
 - (void)viewDidUnload
@@ -58,12 +108,45 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
     [super viewWillAppear:animated];
+    
+
+
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+   /* 
+    if (([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) && (!(notFirstTimeLaunch)))
+    {
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPad" bundle:nil]; 
+        
+        self.coverPage = [storyboard  instantiateViewControllerWithIdentifier:@"RICoverPageViewController"];
+        
+        NSLog(@"cover page");
+        [self presentModalViewController:_coverPage animated:NO];
+        
+    }
+    */
+    
+    notFirstTimeLaunch = YES;
+
+     
     [super viewDidAppear:animated];
+    
+
+}
+
+-(void)checkForUpdates
+{
+    RIAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    [appDelegate.arcoTweetDelegate getLatestTweets];
+    [appDelegate.todayFeedDelegate getLatestEvents];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -86,6 +169,20 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Event *event= [self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([event.source isEqualToString:@"arcoTwitter"])
+    {
+        return 85;
+    }
+    else
+    {
+        return 103;
+    };
+}
+
+
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -101,9 +198,60 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"MasterCell";
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    Event *event= [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    if ([event.source isEqualToString:@"arcoTwitter"])
+    {
+        CellIdentifier = @"TweetCell";
+    }
+    else
+    {
+        CellIdentifier = @"MasterCell";
+    }
+   
+    RIMasterCellView *cell = (RIMasterCellView *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    /*
+    if (cell == nil) {
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"RIMasterCellView" owner:self options:nil];
+        for (id currentObject in topLevelObjects) 
+        {
+            if ([currentObject isKindOfClass:[UITableViewCell class]]) 
+            {
+                cell = (RIMasterCellView *) currentObject;
+                break;
+            }
+        }
+    }
+   
+    if (cell == nil) 
+    {
+        [[NSBundle mainBundle] loadNibNamed:@"RIMasterCellView" owner:self options:nil];
+        cell = _masterCellView;
+        self.masterCellView = nil;
+    }
+
+   // NSLog(@"Cell: %@",cell);
+   
+    Event *event= [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    if (event.title)
+    {
+        cell.storyTitleLbl.text = event.title;
+    }
+    if (event.storyText)
+    {
+        cell.storyDescLbl.text = event.storyText;
+    }
+    if (event.previewImagePath)
+    {
+        cell.articleImageView1.image = [[UIImage alloc]initWithContentsOfFile:event.previewImagePath];
+    }
+    
+    */
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -144,21 +292,58 @@
     return NO;
 }
 
+
+//ipad with split view controller
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        self.detailViewController.detailItem = selectedObject;    
+        Event *selectedEvent = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        //self.detailViewController.detailItem = selectedEvent.title;
+        
+        if ([selectedEvent.source isEqualToString:@"today"])
+        {
+            NSURL *arcoWWW = [NSURL URLWithString:@"http://www.arcosanti.org"];
+            //NSURL *arcoWWW = [NSURL URLWithString:NSHomeDirectory()];
+            NSLog(@"url base: %@",arcoWWW);
+            NSString *webPage = [NSString stringWithFormat:@"<html><STYLE TYPE=\"text/css\"><!-- BODY {border:1px;border-color:#FFFFFF;font-family:\"Helvetica Neue\"; font-size:20px;margin-top:0px;margin-right:18px;margin-left:18px} img{padding:18px;padding-left:0px;padding-top:5px;}.headlineTextBox {background:#AAAAAA;padding-bottom:2px;padding-left:5px;margin-bottom:5px;margin-left:-18px;margin-right:-18px;font-size:32px;font-weight:bold;} --></STYLE><body><div class=\"headlineTextBox\">%@</div>%@</body></html>",[selectedEvent.title capitalizedString] , selectedEvent.storyHTML];
+            [self.detailViewController.webView loadHTMLString:webPage baseURL:arcoWWW];
+            self.detailViewController.webView.hidden = NO;
+        }
+        if ([selectedEvent.source isEqualToString:@"arcoTwitter"])
+        {
+            NSURL *linkURL = [NSURL URLWithString:selectedEvent.link];
+            NSURLRequest *linkRequest = [[NSURLRequest alloc]initWithURL:linkURL];
+            
+           
+            [self.detailViewController.webView loadRequest:linkRequest];
+            self.detailViewController.webView.hidden = NO;
+        }
+       // [self.detailViewController.webView loadHTMLString:selectedEvent.storyHTML baseURL:nil];
+        
     }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:selectedObject];
+    //NSLog(@"prepareForSegue: %@",[segue identifier]);
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    Event *selectedEvent = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    
+    // iphone with nav controller
+    
+    if ([[segue identifier] isEqualToString:@"showDetailiPhone"]) {
+       
+        NSString *webPage = [NSString stringWithFormat:@"<html><STYLE TYPE=\"text/css\"><!-- BODY {font-family:\"Helvetica Neue\"; font-size:32px;margin-top:0px;margin-right:5px;margin-left:5px} img{padding:18px;padding-left:0px;padding-top:5px;}.headlineTextBox {background:#AAAAAA;padding-bottom:2px;padding-left:5px;margin-bottom:5px;margin-left:-5px;margin-right:-5px;font-size:32px;font-weight:bold;} --></STYLE><body><div class=\"headlineTextBox\">%@</div>%@</body></html>",[selectedEvent.title capitalizedString] , selectedEvent.storyHTML];
+        
+        [[segue destinationViewController] setDetailItem:webPage];
     }
+
+    if ([[segue identifier] isEqualToString:@"showTweetLinkiPhone"]) 
+    {
+        [[segue destinationViewController] setURLitem:selectedEvent.link];
+    }
+
 }
 
 #pragma mark - Fetched results controller
@@ -265,10 +450,23 @@
 }
  */
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(RIMasterCellView *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[managedObject valueForKey:@"timeStamp"] description];
+    //NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    Event *event= [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    if (event.title)
+    {
+        cell.storyTitleLbl.text = [event.title capitalizedString];
+    }
+    if (event.storyText)
+    {
+        cell.storyDescLbl.text = event.storyText;
+    }
+    if (event.previewImagePath)
+    {
+        cell.articleImageView1.image = [[UIImage alloc]initWithContentsOfFile:event.previewImagePath];
+    }
 }
 
 - (void)insertNewObject

@@ -11,7 +11,13 @@
 @interface RIDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) id URLitem;
+@property (strong, nonatomic) id titleTextItem;
+@property (strong, nonatomic) NSURL *externalURL;
 
 @property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
+
+//-(void)setWebViewContent:(NSString *)html;
 
 @end

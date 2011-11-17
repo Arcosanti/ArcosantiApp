@@ -120,6 +120,39 @@
                                     <outlet property="storyTitleLbl" destination="NiO-Bb-MLL" id="YOe-Ax-TsJ"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="85" id="BTz-e0-n4D" userLabel="Table View Cell" customClass="RIMasterCellView">
+                                <rect key="frame" x="0.0" y="125" width="320" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="creteTweetBak.png" highlightedImage="creteTweetBakHi.png" id="hH1-RQ-KNr">
+                                            <rect key="frame" x="0.0" y="-1" width="320" height="85"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.70000000000000007" contentMode="scaleToFill" image="siltcastTweet.png" id="FxM-A8-q0C">
+                                            <rect key="frame" x="-3" y="24" width="55" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description" lineBreakMode="wordWrap" numberOfLines="4" adjustsFontSizeToFit="NO" minimumFontSize="10" id="wyU-vo-msE">
+                                            <rect key="frame" x="71" y="10" width="242" height="61"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.75686281919999998" green="0.75686281919999998" blue="0.75686281919999998" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="articleImageView1" destination="FxM-A8-q0C" id="eXu-Uj-Ms5"/>
+                                    <outlet property="backgroundImageView" destination="hH1-RQ-KNr" id="8i8-KC-gGj"/>
+                                    <outlet property="storyDescLbl" destination="wyU-vo-msE" id="gaG-xv-RDk"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
@@ -127,10 +160,49 @@
                             <outlet property="delegate" destination="19" id="21"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Today@Arcosanti" id="40"/>
+                    <navigationItem key="navigationItem" title="Arcosanti News" id="40"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="859" y="-631"/>
+        </scene>
+        <scene sceneID="ltb-SE-88B">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WMp-Ma-Lxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="RICoverPageViewController" title="RICoverPageViewController" id="xFg-2G-xSR" customClass="RICoverPageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mzc-fG-deQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="VAULTSRAINBOW.png" id="OqW-1x-OHL">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" text="Arcosanti     " textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="brE-kP-Gfo">
+                                <rect key="frame" x="-13" y="622" width="1037" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="51"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="nb9-cD-yAX" appends="YES" id="fmD-dR-TOs"/>
+                        </connections>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <tapGestureRecognizer id="nb9-cD-yAX">
+                    <connections>
+                        <action selector="dismissCover:" destination="xFg-2G-xSR" id="5pe-z8-jkf"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-687" y="-1571"/>
         </scene>
         <scene sceneID="50">
             <objects>
@@ -150,12 +222,48 @@
         </scene>
     </scenes>
     <resources>
+        <image name="VAULTSRAINBOW.png" width="1024" height="768"/>
         <image name="crete.png" width="320" height="103"/>
         <image name="creteHighlight.png" width="320" height="103"/>
+        <image name="creteTweetBak.png" width="320" height="85"/>
+        <image name="creteTweetBakHi.png" width="320" height="85"/>
+        <image name="siltcastTweet.png" width="216" height="148"/>
         <image name="vaultBackground.png" width="768" height="1024"/>
     </resources>
+    <classes>
+        <class className="RICoverPageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RICoverPageViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dismissCover:"/>
+            </relationships>
+        </class>
+        <class className="RIDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RIDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="RIMasterCellView" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RIMasterCellView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="articleImageView1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="categoryLbl" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="storyDescLbl" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="storyTitleLbl" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="teaserLbl" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="RIMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RIMasterViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="masterCellView" candidateClass="RIMasterCellView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <nil key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
