@@ -9,6 +9,7 @@
 #import "RIDetailViewController.h"
 #import <Twitter/Twitter.h>
 #import <Accounts/Accounts.h>
+#import "RIAppDelegate.h"
 
 
 @interface RIDetailViewController ()
@@ -31,7 +32,6 @@
 @synthesize event = _event;
 @synthesize tweetPopoverController = _tweetPopoverController;
 @synthesize tweetPopoverSegue = _tweetPopoverSegue;
-
 
 #pragma mark - Managing the detail item
 
@@ -141,12 +141,40 @@
 
 #pragma mark - View lifecycle
 
+- (void)loadStartupDetailView
+{
+    RIAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    //find the latest today entry to load
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init]; 
+    [fetchRequest setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:appDelegate.managedObjectContext]];
+    
+    NSPredicate *pre = [NSPredicate predicateWithFormat:@"(source like %@)", @"today"];
+	[fetchRequest setPredicate:pre];
+    
+    NSError *error = nil;
+	NSArray *fetchResults = [appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if ([fetchResults count] > 0) 
+    {
+        Event *latestToday = [fetchResults objectAtIndex:0];
+        
+        NSURL *arcoWWW = [NSURL URLWithString:@"http://www.arcosanti.org"];
+        //NSURL *arcoWWW = [NSURL URLWithString:NSHomeDirectory()];
+        NSLog(@"url base: %@",arcoWWW);
+        
+        NSString *webPage = [NSString stringWithFormat:@"<html><STYLE TYPE=\"text/css\"><!-- BODY {border:1px;border-color:#FFFFFF;font-family:\"Helvetica Neue\"; font-size:20px;margin-top:0px;margin-right:18px;margin-left:18px} img{padding:18px;padding-left:0px;padding-top:5px;}.headlineTextBox {background:#AAAAAA;padding-bottom:2px;padding-left:5px;margin-bottom:5px;margin-left:-18px;margin-right:-18px;font-size:32px;font-weight:bold;} --></STYLE><body><div class=\"headlineTextBox\">%@</div>%@</body></html>",[latestToday.title capitalizedString] , latestToday.storyHTML];
+        [self.webView loadHTMLString:webPage baseURL:arcoWWW];
+        [self setEventObject:latestToday];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     _detailDescriptionLabel.hidden = YES;
 	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+    [self loadStartupDetailView];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) 
     {
      //   [self.navigationController setNavigationBarHidden:YES animated:YES];

@@ -1,17 +1,17 @@
 //
-//  RIArcoTwitterDelegate.m
+//  RIArcosantiTagTwitterDelegate.m
 //  Arcosanti
 //
-//  Created by Jeff Kunzelman on 11/16/11.
-//  Copyright (c) 2011 river.io. All rights reserved.
+//  Created by Jeff Kunzelman on 2/1/12.
+//  Copyright (c) 2012 river.io. All rights reserved.
 //
-
-#import "RIArcoTwitterDelegate.h"
 #import "RIAppDelegate.h"
 #import "SBJson.h"
 #import "Event.h"
+#import "RIArcosantiTagTwitterDelegate.h"
 
-@implementation RIArcoTwitterDelegate
+@implementation RIArcosantiTagTwitterDelegate
+
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize requestData = _requestData;
 @synthesize tweets = _tweets;
@@ -24,33 +24,15 @@
     
     RIAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
-    /*
-     NSPersistentStoreCoordinator *coordinator = [appDelegate persistentStoreCoordinator];
-     
-     if (coordinator != nil) {
-     self.loadXMLManagedObjectContext = [[NSManagedObjectContext alloc] init];
-     [_loadXMLManagedObjectContext setPersistentStoreCoordinator: coordinator];
-     }
-     */
-    
+
     self.managedObjectContext = appDelegate.managedObjectContext;
-    //self.eventToLoad = [[NSMutableDictionary alloc]init];
+
+    NSLog(@"Downloading Twitter #arcosanti Feed");
     
-    //add an observer for to merge contexts
-    // Register context with the notification center
-    // once the update completes we need to update the appdelegates MOC
-    /*
-	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter]; 
-	[nc addObserver:self
-           selector:@selector(mergeChanges:) 
-               name:NSManagedObjectContextDidSaveNotification
-             object:_managedObjectContext];
-    */
-    NSLog(@"Downloading Twitter Feed");
-    
-    NSURL *url = [[NSURL alloc]initWithString:@"http://search.twitter.com/search.json?q=from:arcosanti"];
+    NSURL *url = [[NSURL alloc]initWithString:@"http://search.twitter.com/search.json?q=%23arcosanti"];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
 	NSURLConnection *conn = [[NSURLConnection alloc]initWithRequest:req delegate:self];
+    
 	if (conn) {
 		self.requestData = [NSMutableData data];		
 	}
@@ -77,11 +59,17 @@
         // replace the found tag with a space
         //(you can filter multi-spaces out later if you wish)
         //html = [html stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>", text]
-          //                                     withString:@" "];
+        //                                     withString:@" "];
         
     } // while //
-    
-    return [NSString stringWithString:url];
+    if (url)
+    {
+        return [NSString stringWithString:url];
+    }
+    else
+    {
+        return @"NotFound";
+    }
 }
 
 /*
@@ -110,7 +98,8 @@
 		return eventEntity;
 	}
 	else {
-		return nil;
+		return nil
+;
 	}
 }
 - (void)saveManagedObjectContext  
@@ -132,6 +121,16 @@
 	NSLog(@"RIArcosantiFeedDelegate.saveManagedObjectContext: Database Saved");
     
 }
+
+- (void)downloadImage:(NSURL *)imageUrl
+{
+    NSData *downloadData = [NSData dataWithContentsOfURL:imageUrl];
+    NSString *jpegFilePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@",[imageUrl lastPathComponent]]];
+    UIImage *downloadImage = [[UIImage alloc] initWithData:downloadData];
+    NSData *imageData = [NSData dataWithData:UIImageJPEGRepresentation(downloadImage, 0.8f)];//1.0f = 100% quality
+    [imageData writeToFile:jpegFilePath atomically:YES];
+}
+
 - (void)insertTweetToDBFromDict:(NSDictionary *)tweetDict
 {
     NSString *dateString = [tweetDict objectForKey:@"created_at"];
@@ -141,7 +140,7 @@
     
     [dateFormat setDateFormat:@"EEE, d LLL yyyy HH:mm:ss ZZZ"];
     NSDate *tweetDate = [dateFormat dateFromString:dateString];
-    NSLog(@"arcosanti tweetDate: %@",tweetDate);
+    NSLog(@"#arcosanti tweetDate: %@",tweetDate);
     //NSString *tweetURL = [self findURLinString:[tweetDict objectForKey:@"text"]];
     //NSLog(@"url: %@",tweetURL);
     
@@ -154,28 +153,40 @@
         eventToInsert.title = @"twitter";
         eventToInsert.storyHTML = [tweetDict objectForKey:@"text"];
         eventToInsert.storyText = [tweetDict objectForKey:@"text"];
+        eventToInsert.author = [tweetDict objectForKey:@"from_user_name"];
+        
+      //  NSString *twitterUserID = [tweetDict objectForKey:@"from_user"];
+        NSString *imageURLString = [tweetDict objectForKey:@"profile_image_url"];
+        
+        
+         NSURL *imageURL = [NSURL URLWithString:[imageURLString stringByReplacingOccurrencesOfString:@"_normal" withString:@"_bigger"]];
+        //NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/users/profile_image?screen_name=%@&size=bigger",twitterUserID]];
+        
+        
+        NSLog(@"#arcosanti tweetURL: %@",imageURL);
+        [self downloadImage:imageURL];
+        eventToInsert.authorProfileImagePath =  [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@",[imageURL lastPathComponent]]];
+        eventToInsert.previewImagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@",[imageURL lastPathComponent]]];
+        
         NSString *linkURLString = [self findURLinString:[tweetDict objectForKey:@"text"]];
-        if (linkURLString)
-        {
-            eventToInsert.link = linkURLString;
-            NSLog(@" @arcosanti tweet link: %@", linkURLString);
-        }
+
+        eventToInsert.link = linkURLString;
+        NSLog(@"#arcosanti tweet link: %@", linkURLString);
+
         eventToInsert.category = @"twitter";
         eventToInsert.timeStamp = tweetDate;
-        eventToInsert.source = @"arcoTwitter";
+        eventToInsert.source = @"#arcosanti";
         
         
         [self saveManagedObjectContext];
-    }
-    
-    
-    
+    } 
 }
+
 
 - (void)loadFeed
 {
     NSString *requestString = [[NSString alloc] initWithData:_requestData
-                                             encoding:NSUTF8StringEncoding]; 
+                                                    encoding:NSUTF8StringEncoding]; 
     
     self.twitterFeedDict = [requestString JSONValue];
     
@@ -183,10 +194,10 @@
     
     // NSLog(@"tweets : %@",_tweets);
     
-     for (NSDictionary *tweetDict in _tweets)
-     {
-         [self insertTweetToDBFromDict:tweetDict];
-     }
+    for (NSDictionary *tweetDict in _tweets)
+    {
+        [self insertTweetToDBFromDict:tweetDict];
+    }
     
     
     

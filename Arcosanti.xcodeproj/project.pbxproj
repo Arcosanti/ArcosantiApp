@@ -11,8 +11,15 @@
 		EE0BBF2A147567D200551217 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0BBF29147567D200551217 /* Accounts.framework */; };
 		EE0BBF2C147567E500551217 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0BBF2B147567E500551217 /* Twitter.framework */; };
 		EE0BBF2F14756D7C00551217 /* RIRetweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0BBF2E14756D7C00551217 /* RIRetweetViewController.m */; };
-		EE0BBF3114756F6200551217 /* redSiltBak.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0BBF3014756F6200551217 /* redSiltBak.png */; };
+		EE296D1B14DA107100C3BCA8 /* RIArcosantiTagTwitterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE296D1A14DA107100C3BCA8 /* RIArcosantiTagTwitterDelegate.m */; };
+		EE2C2C1714E21FBE0064CCBB /* creteTweetHashBak.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2C2C1614E21FBE0064CCBB /* creteTweetHashBak.png */; };
+		EE2CAB4B150D6E130036E379 /* sandboxSectionHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2CAB48150D6E130036E379 /* sandboxSectionHeader@2x.png */; };
+		EE2CAB4C150D6E130036E379 /* treehouseSectionHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2CAB49150D6E130036E379 /* treehouseSectionHeader.png */; };
+		EE2CAB4D150D6E130036E379 /* treehouseSectionHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2CAB4A150D6E130036E379 /* treehouseSectionHeader@2x.png */; };
+		EE316BF414F020A4007413FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE316BF314F020A4007413FA /* QuartzCore.framework */; };
+		EE316BF814F02415007413FA /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE316BF714F02415007413FA /* EGORefreshTableHeaderView.m */; };
 		EE3B1849147492BF0047FF9B /* RICoverPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3B1848147492BF0047FF9B /* RICoverPageViewController.m */; };
+		EE50325D14E22E7700A05784 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = EE50325C14E22E7700A05784 /* Event.m */; };
 		EE6909371471DF0D0070DD87 /* RIMasterCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6909351471DF0C0070DD87 /* RIMasterCellView.m */; };
 		EE6909381471DF0D0070DD87 /* RIMasterCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6909361471DF0D0070DD87 /* RIMasterCellView.xib */; };
 		EE69093A1471E2890070DD87 /* crete.png in Resources */ = {isa = PBXBuildFile; fileRef = EE6909391471E2890070DD87 /* crete.png */; };
@@ -50,7 +57,6 @@
 		EE81457814741CE400456D71 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81456A14741CE400456D71 /* SBJsonTokeniser.m */; };
 		EE81457914741CE400456D71 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81456C14741CE400456D71 /* SBJsonUTF8Stream.m */; };
 		EE81457A14741CE400456D71 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE81456E14741CE400456D71 /* SBJsonWriter.m */; };
-		EE8145811474231F00456D71 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8145801474231F00456D71 /* Event.m */; };
 		EE814583147437B000456D71 /* twitter_newbird_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = EE814582147437B000456D71 /* twitter_newbird_blue.png */; };
 		EE814585147437DA00456D71 /* vaultBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = EE814584147437DA00456D71 /* vaultBackground.png */; };
 		EE86B61714743CA800CF241E /* siltcastTweet.png in Resources */ = {isa = PBXBuildFile; fileRef = EE86B61614743CA800CF241E /* siltcastTweet.png */; };
@@ -65,9 +71,20 @@
 		EE0BBF2B147567E500551217 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		EE0BBF2D14756D7C00551217 /* RIRetweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIRetweetViewController.h; sourceTree = "<group>"; };
 		EE0BBF2E14756D7C00551217 /* RIRetweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIRetweetViewController.m; sourceTree = "<group>"; };
-		EE0BBF3014756F6200551217 /* redSiltBak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redSiltBak.png; path = "../../../../Desktop/arcosanti ipad app image assets/redSiltBak.png"; sourceTree = "<group>"; };
+		EE296D1914DA107100C3BCA8 /* RIArcosantiTagTwitterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIArcosantiTagTwitterDelegate.h; sourceTree = "<group>"; };
+		EE296D1A14DA107100C3BCA8 /* RIArcosantiTagTwitterDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIArcosantiTagTwitterDelegate.m; sourceTree = "<group>"; };
+		EE2C2C1414E0D2B90064CCBB /* Arcosanti 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Arcosanti 5.xcdatamodel"; sourceTree = "<group>"; };
+		EE2C2C1614E21FBE0064CCBB /* creteTweetHashBak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = creteTweetHashBak.png; sourceTree = "<group>"; };
+		EE2CAB48150D6E130036E379 /* sandboxSectionHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sandboxSectionHeader@2x.png"; sourceTree = "<group>"; };
+		EE2CAB49150D6E130036E379 /* treehouseSectionHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = treehouseSectionHeader.png; sourceTree = "<group>"; };
+		EE2CAB4A150D6E130036E379 /* treehouseSectionHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "treehouseSectionHeader@2x.png"; sourceTree = "<group>"; };
+		EE316BF314F020A4007413FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EE316BF614F02415007413FA /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		EE316BF714F02415007413FA /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		EE3B1847147492BF0047FF9B /* RICoverPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RICoverPageViewController.h; sourceTree = "<group>"; };
 		EE3B1848147492BF0047FF9B /* RICoverPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RICoverPageViewController.m; sourceTree = "<group>"; };
+		EE50325B14E22E7700A05784 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		EE50325C14E22E7700A05784 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		EE6909341471DF0C0070DD87 /* RIMasterCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIMasterCellView.h; sourceTree = "<group>"; };
 		EE6909351471DF0C0070DD87 /* RIMasterCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIMasterCellView.m; sourceTree = "<group>"; };
 		EE6909361471DF0D0070DD87 /* RIMasterCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RIMasterCellView.xib; sourceTree = "<group>"; };
@@ -132,8 +149,6 @@
 		EE81456C14741CE400456D71 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		EE81456D14741CE400456D71 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		EE81456E14741CE400456D71 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		EE81457F1474231F00456D71 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Arcosanti/Event.h; sourceTree = "<group>"; };
-		EE8145801474231F00456D71 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Arcosanti/Event.m; sourceTree = "<group>"; };
 		EE814582147437B000456D71 /* twitter_newbird_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_newbird_blue.png; sourceTree = "<group>"; };
 		EE814584147437DA00456D71 /* vaultBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vaultBackground.png; sourceTree = "<group>"; };
 		EE86B61614743CA800CF241E /* siltcastTweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = siltcastTweet.png; sourceTree = "<group>"; };
@@ -147,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE316BF414F020A4007413FA /* QuartzCore.framework in Frameworks */,
 				EE0BBF2C147567E500551217 /* Twitter.framework in Frameworks */,
 				EE0BBF2A147567D200551217 /* Accounts.framework in Frameworks */,
 				EE75696714703936007882FD /* UIKit.framework in Frameworks */,
@@ -162,7 +178,10 @@
 		EE69092D1471D6FB0070DD87 /* interface assets */ = {
 			isa = PBXGroup;
 			children = (
-				EE0BBF3014756F6200551217 /* redSiltBak.png */,
+				EE2CAB48150D6E130036E379 /* sandboxSectionHeader@2x.png */,
+				EE2CAB49150D6E130036E379 /* treehouseSectionHeader.png */,
+				EE2CAB4A150D6E130036E379 /* treehouseSectionHeader@2x.png */,
+				EE2C2C1614E21FBE0064CCBB /* creteTweetHashBak.png */,
 				EE0BBF26147565F500551217 /* siltcastTweetBtn.png */,
 				EE8145501473328400456D71 /* Default-Portrait~ipad.png */,
 				EE81454E1473327800456D71 /* Default-Landscape~ipad.png */,
@@ -184,10 +203,9 @@
 		EE75695714703935007882FD = {
 			isa = PBXGroup;
 			children = (
+				EE316BF314F020A4007413FA /* QuartzCore.framework */,
 				EE0BBF2B147567E500551217 /* Twitter.framework */,
 				EE0BBF29147567D200551217 /* Accounts.framework */,
-				EE81457F1474231F00456D71 /* Event.h */,
-				EE8145801474231F00456D71 /* Event.m */,
 				EE7569AF1470F099007882FD /* Photo.h */,
 				EE7569B01470F099007882FD /* Photo.m */,
 				EE81455514741CE400456D71 /* SBjson */,
@@ -219,6 +237,8 @@
 		EE75696E14703936007882FD /* Arcosanti */ = {
 			isa = PBXGroup;
 			children = (
+				EE316BF614F02415007413FA /* EGORefreshTableHeaderView.h */,
+				EE316BF714F02415007413FA /* EGORefreshTableHeaderView.m */,
 				EE69092D1471D6FB0070DD87 /* interface assets */,
 				EE75697714703937007882FD /* RIAppDelegate.h */,
 				EE75697814703937007882FD /* RIAppDelegate.m */,
@@ -243,6 +263,10 @@
 				EE3B1848147492BF0047FF9B /* RICoverPageViewController.m */,
 				EE0BBF2D14756D7C00551217 /* RIRetweetViewController.h */,
 				EE0BBF2E14756D7C00551217 /* RIRetweetViewController.m */,
+				EE296D1914DA107100C3BCA8 /* RIArcosantiTagTwitterDelegate.h */,
+				EE296D1A14DA107100C3BCA8 /* RIArcosantiTagTwitterDelegate.m */,
+				EE50325B14E22E7700A05784 /* Event.h */,
+				EE50325C14E22E7700A05784 /* Event.m */,
 			);
 			path = Arcosanti;
 			sourceTree = "<group>";
@@ -360,7 +384,10 @@
 				EE86B61C147442A200CF241E /* creteTweetBakHi.png in Resources */,
 				EEEA1C8514748EE100FE0CA1 /* VAULTSRAINBOW.png in Resources */,
 				EE0BBF27147565F500551217 /* siltcastTweetBtn.png in Resources */,
-				EE0BBF3114756F6200551217 /* redSiltBak.png in Resources */,
+				EE2C2C1714E21FBE0064CCBB /* creteTweetHashBak.png in Resources */,
+				EE2CAB4B150D6E130036E379 /* sandboxSectionHeader@2x.png in Resources */,
+				EE2CAB4C150D6E130036E379 /* treehouseSectionHeader.png in Resources */,
+				EE2CAB4D150D6E130036E379 /* treehouseSectionHeader@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,9 +420,11 @@
 				EE81457814741CE400456D71 /* SBJsonTokeniser.m in Sources */,
 				EE81457914741CE400456D71 /* SBJsonUTF8Stream.m in Sources */,
 				EE81457A14741CE400456D71 /* SBJsonWriter.m in Sources */,
-				EE8145811474231F00456D71 /* Event.m in Sources */,
 				EE3B1849147492BF0047FF9B /* RICoverPageViewController.m in Sources */,
 				EE0BBF2F14756D7C00551217 /* RIRetweetViewController.m in Sources */,
+				EE296D1B14DA107100C3BCA8 /* RIArcosantiTagTwitterDelegate.m in Sources */,
+				EE50325D14E22E7700A05784 /* Event.m in Sources */,
+				EE316BF814F02415007413FA /* EGORefreshTableHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,12 +558,13 @@
 		EE75698014703937007882FD /* Arcosanti.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				EE2C2C1414E0D2B90064CCBB /* Arcosanti 5.xcdatamodel */,
 				EE7569A71470ED63007882FD /* Arcosanti 3.xcdatamodel */,
 				EE75699C14706830007882FD /* Arcosanti 2.xcdatamodel */,
 				EE7569A81470EEAA007882FD /* Arcosanti 4.xcdatamodel */,
 				EE75698114703937007882FD /* Arcosanti.xcdatamodel */,
 			);
-			currentVersion = EE7569A81470EEAA007882FD /* Arcosanti 4.xcdatamodel */;
+			currentVersion = EE2C2C1414E0D2B90064CCBB /* Arcosanti 5.xcdatamodel */;
 			path = Arcosanti.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RIArcosantiFeedDelegate.h"
 #import "RIArcoTwitterDelegate.h"
+#import "RIArcosantiTagTwitterDelegate.h"
 
 @interface RIAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -20,6 +21,8 @@
 
 @property (nonatomic,strong) RIArcosantiFeedDelegate *todayFeedDelegate;
 @property (nonatomic,strong) RIArcoTwitterDelegate *arcoTweetDelegate;
+@property (nonatomic,strong) RIArcosantiTagTwitterDelegate *arcoTagTweetDelegate;
+
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

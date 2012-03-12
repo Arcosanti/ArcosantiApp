@@ -25,6 +25,10 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize masterCellView = _masterCellView;
 @synthesize coverPage = _coverPage;
+@synthesize fetchedResultsPredicate = _fetchedResultsPredicate;
+@synthesize selectedSources = _selectedSources;
+
+NSString * const nRIArcoFeedDownloadCompleteNotif = @"ArcoDataComplete";
 
 - (void)awakeFromNib
 {
@@ -46,16 +50,39 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 
     
+    
+    
+    if (_refreshHeaderView == nil) {
+		
+		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+		view.delegate = self;
+		[self.tableView addSubview:view];
+		_refreshHeaderView = view;
+		
+	}
+	
+	//  update the last update date
+	[_refreshHeaderView refreshLastUpdatedDate];
+    
+   // set initial view
+    self.selectedSources = [[NSMutableArray alloc] initWithObjects:@"today", @"arcoTwitter", nil];
+    self.fetchedResultsPredicate = [NSPredicate predicateWithFormat:@"(source IN %@)",_selectedSources];
+
 	// Do any additional setup after loading the view, typically from a nib.
     self.detailViewController = (RIDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     // Set up the edit and add buttons.
    // self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-   UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(checkForUpdates)];
+//   UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(checkForUpdates)];
     
-   self.navigationItem.rightBarButtonItem = addButton;
+  // self.navigationItem.rightBarButtonItem = addButton;
+    
+    UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(changeFeeds)];
+    
+    self.navigationItem.rightBarButtonItem = filterButton;
 
 
     UIDevice *device = [UIDevice currentDevice];					//Get the device object
@@ -68,6 +95,11 @@
 			   name:UIDeviceOrientationDidChangeNotification
 			 object:device];
     
+    [nc addObserver:self
+           selector:@selector(doneLoadingTableViewData)
+               name:nRIArcoFeedDownloadCompleteNotif
+              object:nil];
+   
 
 }
 
@@ -176,9 +208,14 @@
     {
         return 85;
     }
+    else if ([event.source isEqualToString:@"#arcosanti"])
+    {
+        return 98;    
+    }
+    
     else
     {
-        return 103;
+        return 320;
     };
 }
 
@@ -212,6 +249,11 @@
         CellIdentifier = @"MasterCell";
     }
    
+    if ([event.source isEqualToString:@"#arcosanti"])
+    {
+        CellIdentifier = @"HashTagCell";
+    }
+    
     RIMasterCellView *cell = (RIMasterCellView *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     /*
@@ -314,6 +356,16 @@
         {
             NSURL *linkURL = [NSURL URLWithString:selectedEvent.link];
             NSURLRequest *linkRequest = [[NSURLRequest alloc]initWithURL:linkURL];
+            NSLog(@"url @arcosanti : %@",selectedEvent.link);
+            [self.detailViewController setEventObject:selectedEvent];           
+            [self.detailViewController.webView loadRequest:linkRequest];
+            self.detailViewController.webView.hidden = NO;
+        }
+        if ([selectedEvent.source isEqualToString:@"#arcosanti"])
+        {
+            NSURL *linkURL = [NSURL URLWithString:selectedEvent.link];
+            NSLog(@"url#arcosanti: %@",selectedEvent.link);
+            NSURLRequest *linkRequest = [[NSURLRequest alloc]initWithURL:linkURL];
             [self.detailViewController setEventObject:selectedEvent];           
             [self.detailViewController.webView loadRequest:linkRequest];
             self.detailViewController.webView.hidden = NO;
@@ -364,6 +416,8 @@
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
+    [fetchRequest setPredicate:_fetchedResultsPredicate];
+    
     // Edit the sort key as appropriate.
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
@@ -372,7 +426,7 @@
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
@@ -463,11 +517,81 @@
     {
         cell.storyDescLbl.text = event.storyText;
     }
+    if (event.author)
+    {
+        cell.authorLbl.text = event.author;
+    }
+    // switch to authorimage in the future for tweets
     if (event.previewImagePath)
     {
+        NSLog(@"%@",event.previewImagePath);
         cell.articleImageView1.image = [[UIImage alloc]initWithContentsOfFile:event.previewImagePath];
+        
     }
 }
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{	
+	
+	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	
+	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+	
+}
+
+#pragma mark -
+#pragma mark Data Source Loading / Reloading Methods
+
+- (void)reloadTableViewDataSource
+{
+	
+	//  should be calling your tableviews data source model to reload
+	NSLog(@"check for updates reloadTableViewDataSource");
+    [self checkForUpdates];
+	_reloading = YES;
+	
+}
+
+- (void)doneLoadingTableViewData
+{
+	
+	//  model should call this when its done loading
+	_reloading = NO;
+	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+	
+}
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView *)view
+{
+	
+	[self reloadTableViewDataSource];
+//	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+	
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
+{
+	
+	
+    return _reloading; // should return if data source model is reloading
+	
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view
+{
+	
+	return [NSDate date]; // should return date data source was last changed
+	
+}
+
+
 
 - (void)insertNewObject
 {
@@ -492,5 +616,45 @@
         abort();
     }
 }
+
+- (void)loadNewFeedsFromSources:(NSMutableArray *)sources
+{
+    
+    self.fetchedResultsPredicate = [NSPredicate predicateWithFormat:@"(source IN %@)",sources];
+    
+    NSError *error = nil;
+	self.fetchedResultsController = nil;
+    if (![[self fetchedResultsController] performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }	
+    
+    self.selectedSources = nil;
+    self.selectedSources = [[NSMutableArray alloc]initWithArray:sources];
+    
+    [self.tableView reloadData];
+	[self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+    
+} 
+
+- (void)changeFeeds
+
+{
+  
+    NSMutableArray *arcoSources = [[NSMutableArray alloc] initWithObjects:@"today", @"arcoTwitter", nil];
+    NSMutableArray *arcoTweetTagSources = [[NSMutableArray alloc] initWithObjects:@"#arcosanti", nil];
+    
+    if ([_selectedSources isEqualToArray:arcoSources]) 
+    {
+        [self loadNewFeedsFromSources:arcoTweetTagSources];
+        
+    }
+    else
+    {
+        [self loadNewFeedsFromSources:arcoSources];
+    }
+        
+}
+
 
 @end

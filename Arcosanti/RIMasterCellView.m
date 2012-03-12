@@ -15,6 +15,7 @@
 @synthesize storyDescLbl;
 @synthesize categoryLbl;
 @synthesize teaserLbl;
+@synthesize authorLbl;
 /*  
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

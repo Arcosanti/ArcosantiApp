@@ -11,6 +11,7 @@
 #import "RIMasterViewController.h"
 #import "RIArcosantiFeedDelegate.h"
 #import "RIArcoTwitterDelegate.h"
+#import "RIArcosantiTagTwitterDelegate.h"
 
 @implementation RIAppDelegate
 
@@ -20,6 +21,7 @@
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize todayFeedDelegate = _todayFeedDelegate;
 @synthesize arcoTweetDelegate = _arcoTweetDelegate;
+@synthesize arcoTagTweetDelegate = _arcoTagTweetDelegate;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -43,6 +45,9 @@
     
     self.arcoTweetDelegate = [[RIArcoTwitterDelegate alloc]init];
     [_arcoTweetDelegate getLatestTweets];
+    
+    self.arcoTagTweetDelegate = [[RIArcosantiTagTwitterDelegate alloc]init];
+    [_arcoTagTweetDelegate getLatestTweets];
     
     return YES;
 }
@@ -156,7 +161,12 @@
     
     NSError *error = nil;
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
+    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL 
+                                                          options:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], 
+                                                                   NSMigratePersistentStoresAutomaticallyOption, 
+                                                                   [NSNumber numberWithBool:YES], 
+                                                                   NSInferMappingModelAutomaticallyOption, nil]
+                                                            error:&error])
     {
         /*
          Replace this implementation with code to handle the error appropriately.

@@ -16,6 +16,7 @@
     IBOutlet UILabel *storyDescLbl;
     IBOutlet UILabel *categoryLbl;
     IBOutlet UILabel *teaserLbl;
+    IBOutlet UILabel *authorLbl;
     
 }
 
@@ -25,5 +26,6 @@
 @property (nonatomic, strong) IBOutlet IBOutlet UILabel *storyDescLbl;
 @property (nonatomic, strong) IBOutlet IBOutlet UILabel *categoryLbl;
 @property (nonatomic, strong) IBOutlet IBOutlet UILabel *teaserLbl;
+@property (nonatomic, strong) IBOutlet IBOutlet UILabel *authorLbl;
 
 @end

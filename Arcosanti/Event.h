@@ -2,8 +2,8 @@
 //  Event.h
 //  Arcosanti
 //
-//  Created by Jeff Kunzelman on 11/16/11.
-//  Copyright (c) 2011 river.io. All rights reserved.
+//  Created by Jeff Kunzelman on 2/7/12.
+//  Copyright (c) 2012 river.io. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,14 +13,16 @@
 
 @interface Event : NSManagedObject
 
+@property (nonatomic, retain) NSString * author;
+@property (nonatomic, retain) NSString * authorProfileImagePath;
 @property (nonatomic, retain) NSString * category;
 @property (nonatomic, retain) NSString * link;
 @property (nonatomic, retain) NSString * previewImagePath;
+@property (nonatomic, retain) NSString * source;
 @property (nonatomic, retain) NSString * storyHTML;
 @property (nonatomic, retain) NSString * storyText;
 @property (nonatomic, retain) NSDate * timeStamp;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSString * source;
 @property (nonatomic, retain) NSSet *photo;
 @end
 

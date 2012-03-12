@@ -18,6 +18,7 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize eventToLoad = _eventToLoad;
 
+NSString * const nRIArcoFeedDownloadComplete = @"ArcoDataComplete";
 
 -(void) parseDownloadThread
 {
@@ -214,8 +215,11 @@
             [eventToInsert addPhotoObject:photoToInsert];
         }
         
+                
        [self saveManagedObjectContext];
-    }   
+    }  
+    [[NSNotificationCenter defaultCenter] postNotificationName:nRIArcoFeedDownloadComplete object:nil];
+
 }
 
 - (void)mergeChanges:(NSNotification *)notification

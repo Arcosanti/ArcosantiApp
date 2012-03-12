@@ -2,8 +2,8 @@
 //  Event.m
 //  Arcosanti
 //
-//  Created by Jeff Kunzelman on 11/16/11.
-//  Copyright (c) 2011 river.io. All rights reserved.
+//  Created by Jeff Kunzelman on 2/7/12.
+//  Copyright (c) 2012 river.io. All rights reserved.
 //
 
 #import "Event.h"
@@ -12,14 +12,16 @@
 
 @implementation Event
 
+@dynamic author;
+@dynamic authorProfileImagePath;
 @dynamic category;
 @dynamic link;
 @dynamic previewImagePath;
+@dynamic source;
 @dynamic storyHTML;
 @dynamic storyText;
 @dynamic timeStamp;
 @dynamic title;
-@dynamic source;
 @dynamic photo;
 
 @end
