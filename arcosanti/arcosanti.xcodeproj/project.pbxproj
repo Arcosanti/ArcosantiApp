@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE77BD321A2108B40020F02D /* RIArcosantiFeedDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE77BD311A2108B40020F02D /* RIArcosantiFeedDelegate.m */; };
+		EE77BD351A2138A40020F02D /* RSS.m in Sources */ = {isa = PBXBuildFile; fileRef = EE77BD341A2138A40020F02D /* RSS.m */; };
+		EE77BD391A2180710020F02D /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = EE77BD381A2180710020F02D /* NSString+HTML.m */; };
+		EE77BD3C1A21819B0020F02D /* GTNMSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = EE77BD3B1A21819B0020F02D /* GTNMSString+HTML.m */; };
+		EE77BD3E1A218BB30020F02D /* photo141028sa0608.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EE77BD3D1A218BB30020F02D /* photo141028sa0608.jpg */; };
+		EE77BD431A218CF10020F02D /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE77BD421A218CF10020F02D /* NewsTableViewCell.m */; };
+		EE77BD461A2196E90020F02D /* ImageDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EE77BD451A2196E90020F02D /* ImageDownloadOperation.m */; };
+		EE78D6D71A20D6A8009C3270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6D61A20D6A8009C3270 /* main.m */; };
+		EE78D6DA1A20D6A8009C3270 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6D91A20D6A8009C3270 /* AppDelegate.m */; };
+		EE78D6DD1A20D6A8009C3270 /* arcosanti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6DB1A20D6A8009C3270 /* arcosanti.xcdatamodeld */; };
+		EE78D6E01A20D6A8009C3270 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6DF1A20D6A8009C3270 /* MasterViewController.m */; };
+		EE78D6E31A20D6A9009C3270 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6E21A20D6A8009C3270 /* DetailViewController.m */; };
+		EE78D6E61A20D6A9009C3270 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE78D6E41A20D6A9009C3270 /* Main.storyboard */; };
+		EE78D6E81A20D6A9009C3270 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE78D6E71A20D6A9009C3270 /* Images.xcassets */; };
+		EE78D6EB1A20D6A9009C3270 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE78D6E91A20D6A9009C3270 /* LaunchScreen.xib */; };
+		EE78D6F71A20D6A9009C3270 /* arcosantiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6F61A20D6A9009C3270 /* arcosantiTests.m */; };
+		EE78D77F1A20E2C6009C3270 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE78D77E1A20E2C6009C3270 /* MobileCoreServices.framework */; };
+		EE78D7811A20E2E8009C3270 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE78D7801A20E2E8009C3270 /* SystemConfiguration.framework */; };
+		EE78D7841A20EDED009C3270 /* RIArcosantiStoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D7831A20EDED009C3270 /* RIArcosantiStoryParser.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE78D6F11A20D6A9009C3270 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE78D6C91A20D6A8009C3270 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE78D6D01A20D6A8009C3270;
+			remoteInfo = arcosanti;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EE77BD301A2108B40020F02D /* RIArcosantiFeedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIArcosantiFeedDelegate.h; sourceTree = "<group>"; };
+		EE77BD311A2108B40020F02D /* RIArcosantiFeedDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIArcosantiFeedDelegate.m; sourceTree = "<group>"; };
+		EE77BD331A2138A40020F02D /* RSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSS.h; path = ../RSS.h; sourceTree = "<group>"; };
+		EE77BD341A2138A40020F02D /* RSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSS.m; path = ../RSS.m; sourceTree = "<group>"; };
+		EE77BD371A2180710020F02D /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		EE77BD381A2180710020F02D /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		EE77BD3A1A21819B0020F02D /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		EE77BD3B1A21819B0020F02D /* GTNMSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTNMSString+HTML.m"; sourceTree = "<group>"; };
+		EE77BD3D1A218BB30020F02D /* photo141028sa0608.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo141028sa0608.jpg; sourceTree = "<group>"; };
+		EE77BD411A218CF10020F02D /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		EE77BD421A218CF10020F02D /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		EE77BD441A2196E90020F02D /* ImageDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadOperation.h; sourceTree = "<group>"; };
+		EE77BD451A2196E90020F02D /* ImageDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadOperation.m; sourceTree = "<group>"; };
+		EE78D6D11A20D6A8009C3270 /* arcosanti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arcosanti.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE78D6D51A20D6A8009C3270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE78D6D61A20D6A8009C3270 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EE78D6D81A20D6A8009C3270 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EE78D6D91A20D6A8009C3270 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EE78D6DC1A20D6A8009C3270 /* arcosanti.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = arcosanti.xcdatamodel; sourceTree = "<group>"; };
+		EE78D6DE1A20D6A8009C3270 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		EE78D6DF1A20D6A8009C3270 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		EE78D6E11A20D6A8009C3270 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		EE78D6E21A20D6A8009C3270 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		EE78D6E51A20D6A9009C3270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE78D6E71A20D6A9009C3270 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EE78D6EA1A20D6A9009C3270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EE78D6F01A20D6A9009C3270 /* arcosantiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arcosantiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE78D6F51A20D6A9009C3270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE78D6F61A20D6A9009C3270 /* arcosantiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = arcosantiTests.m; sourceTree = "<group>"; };
+		EE78D77E1A20E2C6009C3270 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		EE78D7801A20E2E8009C3270 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EE78D7821A20EDED009C3270 /* RIArcosantiStoryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIArcosantiStoryParser.h; sourceTree = "<group>"; };
+		EE78D7831A20EDED009C3270 /* RIArcosantiStoryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIArcosantiStoryParser.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE78D6CE1A20D6A8009C3270 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE78D7811A20E2E8009C3270 /* SystemConfiguration.framework in Frameworks */,
+				EE78D77F1A20E2C6009C3270 /* MobileCoreServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE78D6ED1A20D6A9009C3270 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE78D6C81A20D6A8009C3270 = {
+			isa = PBXGroup;
+			children = (
+				EE78D7801A20E2E8009C3270 /* SystemConfiguration.framework */,
+				EE78D77E1A20E2C6009C3270 /* MobileCoreServices.framework */,
+				EE78D6D31A20D6A8009C3270 /* arcosanti */,
+				EE78D6F31A20D6A9009C3270 /* arcosantiTests */,
+				EE78D6D21A20D6A8009C3270 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE78D6D21A20D6A8009C3270 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE78D6D11A20D6A8009C3270 /* arcosanti.app */,
+				EE78D6F01A20D6A9009C3270 /* arcosantiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE78D6D31A20D6A8009C3270 /* arcosanti */ = {
+			isa = PBXGroup;
+			children = (
+				EE78D7821A20EDED009C3270 /* RIArcosantiStoryParser.h */,
+				EE78D7831A20EDED009C3270 /* RIArcosantiStoryParser.m */,
+				EE77BD301A2108B40020F02D /* RIArcosantiFeedDelegate.h */,
+				EE77BD311A2108B40020F02D /* RIArcosantiFeedDelegate.m */,
+				EE78D6D81A20D6A8009C3270 /* AppDelegate.h */,
+				EE78D6D91A20D6A8009C3270 /* AppDelegate.m */,
+				EE78D6DE1A20D6A8009C3270 /* MasterViewController.h */,
+				EE78D6DF1A20D6A8009C3270 /* MasterViewController.m */,
+				EE78D6E11A20D6A8009C3270 /* DetailViewController.h */,
+				EE78D6E21A20D6A8009C3270 /* DetailViewController.m */,
+				EE78D6E41A20D6A9009C3270 /* Main.storyboard */,
+				EE78D6E71A20D6A9009C3270 /* Images.xcassets */,
+				EE77BD3D1A218BB30020F02D /* photo141028sa0608.jpg */,
+				EE78D6E91A20D6A9009C3270 /* LaunchScreen.xib */,
+				EE78D6DB1A20D6A8009C3270 /* arcosanti.xcdatamodeld */,
+				EE77BD331A2138A40020F02D /* RSS.h */,
+				EE77BD341A2138A40020F02D /* RSS.m */,
+				EE78D6D41A20D6A8009C3270 /* Supporting Files */,
+				EE77BD371A2180710020F02D /* NSString+HTML.h */,
+				EE77BD381A2180710020F02D /* NSString+HTML.m */,
+				EE77BD3A1A21819B0020F02D /* GTMNSString+HTML.h */,
+				EE77BD3B1A21819B0020F02D /* GTNMSString+HTML.m */,
+				EE77BD411A218CF10020F02D /* NewsTableViewCell.h */,
+				EE77BD421A218CF10020F02D /* NewsTableViewCell.m */,
+				EE77BD441A2196E90020F02D /* ImageDownloadOperation.h */,
+				EE77BD451A2196E90020F02D /* ImageDownloadOperation.m */,
+			);
+			path = arcosanti;
+			sourceTree = "<group>";
+		};
+		EE78D6D41A20D6A8009C3270 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE78D6D51A20D6A8009C3270 /* Info.plist */,
+				EE78D6D61A20D6A8009C3270 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EE78D6F31A20D6A9009C3270 /* arcosantiTests */ = {
+			isa = PBXGroup;
+			children = (
+				EE78D6F61A20D6A9009C3270 /* arcosantiTests.m */,
+				EE78D6F41A20D6A9009C3270 /* Supporting Files */,
+			);
+			path = arcosantiTests;
+			sourceTree = "<group>";
+		};
+		EE78D6F41A20D6A9009C3270 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE78D6F51A20D6A9009C3270 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE78D6D01A20D6A8009C3270 /* arcosanti */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE78D6FA1A20D6A9009C3270 /* Build configuration list for PBXNativeTarget "arcosanti" */;
+			buildPhases = (
+				EE78D6CD1A20D6A8009C3270 /* Sources */,
+				EE78D6CE1A20D6A8009C3270 /* Frameworks */,
+				EE78D6CF1A20D6A8009C3270 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = arcosanti;
+			productName = arcosanti;
+			productReference = EE78D6D11A20D6A8009C3270 /* arcosanti.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE78D6EF1A20D6A9009C3270 /* arcosantiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE78D6FD1A20D6A9009C3270 /* Build configuration list for PBXNativeTarget "arcosantiTests" */;
+			buildPhases = (
+				EE78D6EC1A20D6A9009C3270 /* Sources */,
+				EE78D6ED1A20D6A9009C3270 /* Frameworks */,
+				EE78D6EE1A20D6A9009C3270 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE78D6F21A20D6A9009C3270 /* PBXTargetDependency */,
+			);
+			name = arcosantiTests;
+			productName = arcosantiTests;
+			productReference = EE78D6F01A20D6A9009C3270 /* arcosantiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE78D6C91A20D6A8009C3270 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Jeffrey Kunzelman";
+				TargetAttributes = {
+					EE78D6D01A20D6A8009C3270 = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = U3Z59VXPUB;
+					};
+					EE78D6EF1A20D6A9009C3270 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = EE78D6D01A20D6A8009C3270;
+					};
+				};
+			};
+			buildConfigurationList = EE78D6CC1A20D6A8009C3270 /* Build configuration list for PBXProject "arcosanti" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE78D6C81A20D6A8009C3270;
+			productRefGroup = EE78D6D21A20D6A8009C3270 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE78D6D01A20D6A8009C3270 /* arcosanti */,
+				EE78D6EF1A20D6A9009C3270 /* arcosantiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE78D6CF1A20D6A8009C3270 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE77BD3E1A218BB30020F02D /* photo141028sa0608.jpg in Resources */,
+				EE78D6E61A20D6A9009C3270 /* Main.storyboard in Resources */,
+				EE78D6EB1A20D6A9009C3270 /* LaunchScreen.xib in Resources */,
+				EE78D6E81A20D6A9009C3270 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE78D6EE1A20D6A9009C3270 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE78D6CD1A20D6A8009C3270 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE77BD351A2138A40020F02D /* RSS.m in Sources */,
+				EE78D6E31A20D6A9009C3270 /* DetailViewController.m in Sources */,
+				EE77BD3C1A21819B0020F02D /* GTNMSString+HTML.m in Sources */,
+				EE77BD321A2108B40020F02D /* RIArcosantiFeedDelegate.m in Sources */,
+				EE78D7841A20EDED009C3270 /* RIArcosantiStoryParser.m in Sources */,
+				EE78D6E01A20D6A8009C3270 /* MasterViewController.m in Sources */,
+				EE78D6DA1A20D6A8009C3270 /* AppDelegate.m in Sources */,
+				EE77BD461A2196E90020F02D /* ImageDownloadOperation.m in Sources */,
+				EE78D6D71A20D6A8009C3270 /* main.m in Sources */,
+				EE77BD431A218CF10020F02D /* NewsTableViewCell.m in Sources */,
+				EE77BD391A2180710020F02D /* NSString+HTML.m in Sources */,
+				EE78D6DD1A20D6A8009C3270 /* arcosanti.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE78D6EC1A20D6A9009C3270 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE78D6F71A20D6A9009C3270 /* arcosantiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE78D6F21A20D6A9009C3270 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE78D6D01A20D6A8009C3270 /* arcosanti */;
+			targetProxy = EE78D6F11A20D6A9009C3270 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EE78D6E41A20D6A9009C3270 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE78D6E51A20D6A9009C3270 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EE78D6E91A20D6A9009C3270 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE78D6EA1A20D6A9009C3270 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE78D6F81A20D6A9009C3270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE78D6F91A20D6A9009C3270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE78D6FB1A20D6A9009C3270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = arcosanti/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EE78D6FC1A20D6A9009C3270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = arcosanti/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EE78D6FE1A20D6A9009C3270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = arcosantiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/arcosanti.app/arcosanti";
+			};
+			name = Debug;
+		};
+		EE78D6FF1A20D6A9009C3270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = arcosantiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/arcosanti.app/arcosanti";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE78D6CC1A20D6A8009C3270 /* Build configuration list for PBXProject "arcosanti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE78D6F81A20D6A9009C3270 /* Debug */,
+				EE78D6F91A20D6A9009C3270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE78D6FA1A20D6A9009C3270 /* Build configuration list for PBXNativeTarget "arcosanti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE78D6FB1A20D6A9009C3270 /* Debug */,
+				EE78D6FC1A20D6A9009C3270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE78D6FD1A20D6A9009C3270 /* Build configuration list for PBXNativeTarget "arcosantiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE78D6FE1A20D6A9009C3270 /* Debug */,
+				EE78D6FF1A20D6A9009C3270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EE78D6DB1A20D6A8009C3270 /* arcosanti.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EE78D6DC1A20D6A8009C3270 /* arcosanti.xcdatamodel */,
+			);
+			currentVersion = EE78D6DC1A20D6A8009C3270 /* arcosanti.xcdatamodel */;
+			path = arcosanti.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EE78D6C91A20D6A8009C3270 /* Project object */;
+}

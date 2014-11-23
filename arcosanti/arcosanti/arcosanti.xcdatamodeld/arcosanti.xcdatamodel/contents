@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14C68k" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Event">
+        <attribute name="timeStamp" optional="YES" attributeType="Date">
+            <userInfo/>
+        </attribute>
+        <userInfo/>
+    </entity>
+    <entity name="RSS" representedClassName="RSS" syncable="YES">
+        <attribute name="articleCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="articleDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="articleDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="articleImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="articleTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="articleUrl" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="RSS" positionX="261" positionY="198" width="128" height="135"/>
+    </elements>
+</model>
