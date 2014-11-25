@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE1DA7CF1A22E26100BCD9B1 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1DA7CE1A22E26100BCD9B1 /* Parse.framework */; };
 		EE77BD321A2108B40020F02D /* RIArcosantiFeedDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE77BD311A2108B40020F02D /* RIArcosantiFeedDelegate.m */; };
 		EE77BD351A2138A40020F02D /* RSS.m in Sources */ = {isa = PBXBuildFile; fileRef = EE77BD341A2138A40020F02D /* RSS.m */; };
 		EE77BD391A2180710020F02D /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = EE77BD381A2180710020F02D /* NSString+HTML.m */; };
@@ -20,12 +21,38 @@
 		EE78D6E01A20D6A8009C3270 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6DF1A20D6A8009C3270 /* MasterViewController.m */; };
 		EE78D6E31A20D6A9009C3270 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6E21A20D6A8009C3270 /* DetailViewController.m */; };
 		EE78D6E61A20D6A9009C3270 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE78D6E41A20D6A9009C3270 /* Main.storyboard */; };
-		EE78D6E81A20D6A9009C3270 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE78D6E71A20D6A9009C3270 /* Images.xcassets */; };
 		EE78D6EB1A20D6A9009C3270 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE78D6E91A20D6A9009C3270 /* LaunchScreen.xib */; };
 		EE78D6F71A20D6A9009C3270 /* arcosantiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6F61A20D6A9009C3270 /* arcosantiTests.m */; };
 		EE78D77F1A20E2C6009C3270 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE78D77E1A20E2C6009C3270 /* MobileCoreServices.framework */; };
 		EE78D7811A20E2E8009C3270 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE78D7801A20E2E8009C3270 /* SystemConfiguration.framework */; };
 		EE78D7841A20EDED009C3270 /* RIArcosantiStoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D7831A20EDED009C3270 /* RIArcosantiStoryParser.m */; };
+		EE7B675F1A227E5600D3175B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B675B1A227E5600D3175B /* ParseUI.framework */; };
+		EE7B67601A227E5600D3175B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B675C1A227E5600D3175B /* Bolts.framework */; };
+		EE7B67611A227E5600D3175B /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B675D1A227E5600D3175B /* ParseFacebookUtils.framework */; };
+		EE7B67631A227F4F00D3175B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B67621A227F4F00D3175B /* Accounts.framework */; };
+		EE7B67651A227F5700D3175B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B67641A227F5700D3175B /* AudioToolbox.framework */; };
+		EE7B67671A227F6500D3175B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B67661A227F6500D3175B /* CFNetwork.framework */; };
+		EE7B67691A227F6E00D3175B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B67681A227F6E00D3175B /* CoreGraphics.framework */; };
+		EE7B676B1A227F7700D3175B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B676A1A227F7700D3175B /* CoreLocation.framework */; };
+		EE7B676D1A227F8100D3175B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B676C1A227F8100D3175B /* libz.dylib */; };
+		EE7B676F1A227F9A00D3175B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B676E1A227F9A00D3175B /* QuartzCore.framework */; };
+		EE7B67711A227FA500D3175B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B67701A227FA500D3175B /* Security.framework */; };
+		EE7B67731A227FB400D3175B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B67721A227FB400D3175B /* Social.framework */; };
+		EE7B67751A227FBE00D3175B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B67741A227FBE00D3175B /* StoreKit.framework */; };
+		EE7B67781A22826700D3175B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B67771A22826700D3175B /* LoginViewController.m */; };
+		EE7B677A1A2293F900D3175B /* DSCN0078.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EE7B67791A2293F900D3175B /* DSCN0078.jpg */; };
+		EE7B677C1A22948000D3175B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE7B677B1A22948000D3175B /* Images.xcassets */; };
+		EE7B67801A2296FC00D3175B /* PAWPost.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B677F1A2296FC00D3175B /* PAWPost.m */; };
+		EE7B67841A22970500D3175B /* PAWConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B67821A22970500D3175B /* PAWConfigManager.m */; };
+		EE7B67871A22971000D3175B /* PAWActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B67861A22971000D3175B /* PAWActivityView.m */; };
+		EE7B678A1A22971B00D3175B /* PAWPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B67891A22971B00D3175B /* PAWPostTableViewCell.m */; };
+		EE7B678F1A22972500D3175B /* PAWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B678C1A22972500D3175B /* PAWLoginViewController.m */; };
+		EE7B67901A22972500D3175B /* PAWNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B678E1A22972500D3175B /* PAWNewUserViewController.m */; };
+		EE7B67971A22972E00D3175B /* PAWWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B67921A22972E00D3175B /* PAWWallViewController.m */; };
+		EE7B67981A22972E00D3175B /* PAWWallPostCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B67941A22972E00D3175B /* PAWWallPostCreateViewController.m */; };
+		EE7B67991A22972E00D3175B /* PAWWallPostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B67961A22972E00D3175B /* PAWWallPostsTableViewController.m */; };
+		EE7B679C1A22973600D3175B /* PAWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B679B1A22973600D3175B /* PAWSettingsViewController.m */; };
+		EE7B679E1A2297E500D3175B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B679D1A2297E500D3175B /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE1DA7CE1A22E26100BCD9B1 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		EE77BD301A2108B40020F02D /* RIArcosantiFeedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIArcosantiFeedDelegate.h; sourceTree = "<group>"; };
 		EE77BD311A2108B40020F02D /* RIArcosantiFeedDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIArcosantiFeedDelegate.m; sourceTree = "<group>"; };
 		EE77BD331A2138A40020F02D /* RSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSS.h; path = ../RSS.h; sourceTree = "<group>"; };
@@ -63,7 +91,6 @@
 		EE78D6E11A20D6A8009C3270 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		EE78D6E21A20D6A8009C3270 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		EE78D6E51A20D6A9009C3270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EE78D6E71A20D6A9009C3270 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EE78D6EA1A20D6A9009C3270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EE78D6F01A20D6A9009C3270 /* arcosantiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arcosantiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE78D6F51A20D6A9009C3270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +99,46 @@
 		EE78D7801A20E2E8009C3270 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EE78D7821A20EDED009C3270 /* RIArcosantiStoryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIArcosantiStoryParser.h; sourceTree = "<group>"; };
 		EE78D7831A20EDED009C3270 /* RIArcosantiStoryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIArcosantiStoryParser.m; sourceTree = "<group>"; };
+		EE7B675B1A227E5600D3175B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		EE7B675C1A227E5600D3175B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		EE7B675D1A227E5600D3175B /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		EE7B67621A227F4F00D3175B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		EE7B67641A227F5700D3175B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EE7B67661A227F6500D3175B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		EE7B67681A227F6E00D3175B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EE7B676A1A227F7700D3175B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EE7B676C1A227F8100D3175B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		EE7B676E1A227F9A00D3175B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EE7B67701A227FA500D3175B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EE7B67721A227FB400D3175B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		EE7B67741A227FBE00D3175B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EE7B67761A22826700D3175B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		EE7B67771A22826700D3175B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		EE7B67791A2293F900D3175B /* DSCN0078.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSCN0078.jpg; sourceTree = "<group>"; };
+		EE7B677B1A22948000D3175B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EE7B677E1A2296FC00D3175B /* PAWPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWPost.h; sourceTree = "<group>"; };
+		EE7B677F1A2296FC00D3175B /* PAWPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAWPost.m; sourceTree = "<group>"; };
+		EE7B67811A22970500D3175B /* PAWConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWConfigManager.h; sourceTree = "<group>"; };
+		EE7B67821A22970500D3175B /* PAWConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAWConfigManager.m; sourceTree = "<group>"; };
+		EE7B67831A22970500D3175B /* PAWConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWConstants.h; sourceTree = "<group>"; };
+		EE7B67851A22971000D3175B /* PAWActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWActivityView.h; sourceTree = "<group>"; };
+		EE7B67861A22971000D3175B /* PAWActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAWActivityView.m; sourceTree = "<group>"; };
+		EE7B67881A22971B00D3175B /* PAWPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWPostTableViewCell.h; sourceTree = "<group>"; };
+		EE7B67891A22971B00D3175B /* PAWPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAWPostTableViewCell.m; sourceTree = "<group>"; };
+		EE7B678B1A22972500D3175B /* PAWLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWLoginViewController.h; sourceTree = "<group>"; };
+		EE7B678C1A22972500D3175B /* PAWLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAWLoginViewController.m; sourceTree = "<group>"; };
+		EE7B678D1A22972500D3175B /* PAWNewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWNewUserViewController.h; sourceTree = "<group>"; };
+		EE7B678E1A22972500D3175B /* PAWNewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAWNewUserViewController.m; sourceTree = "<group>"; };
+		EE7B67911A22972E00D3175B /* PAWWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWWallViewController.h; sourceTree = "<group>"; };
+		EE7B67921A22972E00D3175B /* PAWWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAWWallViewController.m; sourceTree = "<group>"; };
+		EE7B67931A22972E00D3175B /* PAWWallPostCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWWallPostCreateViewController.h; sourceTree = "<group>"; };
+		EE7B67941A22972E00D3175B /* PAWWallPostCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAWWallPostCreateViewController.m; sourceTree = "<group>"; };
+		EE7B67951A22972E00D3175B /* PAWWallPostsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWWallPostsTableViewController.h; sourceTree = "<group>"; };
+		EE7B67961A22972E00D3175B /* PAWWallPostsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAWWallPostsTableViewController.m; sourceTree = "<group>"; };
+		EE7B679A1A22973600D3175B /* PAWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWSettingsViewController.h; sourceTree = "<group>"; };
+		EE7B679B1A22973600D3175B /* PAWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAWSettingsViewController.m; sourceTree = "<group>"; };
+		EE7B679D1A2297E500D3175B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		EE7B679F1A22983A00D3175B /* arcosanti-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "arcosanti-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +146,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE7B679E1A2297E500D3175B /* MapKit.framework in Frameworks */,
+				EE7B676B1A227F7700D3175B /* CoreLocation.framework in Frameworks */,
 				EE78D7811A20E2E8009C3270 /* SystemConfiguration.framework in Frameworks */,
+				EE7B67751A227FBE00D3175B /* StoreKit.framework in Frameworks */,
+				EE7B67731A227FB400D3175B /* Social.framework in Frameworks */,
+				EE7B67711A227FA500D3175B /* Security.framework in Frameworks */,
+				EE1DA7CF1A22E26100BCD9B1 /* Parse.framework in Frameworks */,
+				EE7B676F1A227F9A00D3175B /* QuartzCore.framework in Frameworks */,
 				EE78D77F1A20E2C6009C3270 /* MobileCoreServices.framework in Frameworks */,
+				EE7B676D1A227F8100D3175B /* libz.dylib in Frameworks */,
+				EE7B67691A227F6E00D3175B /* CoreGraphics.framework in Frameworks */,
+				EE7B67671A227F6500D3175B /* CFNetwork.framework in Frameworks */,
+				EE7B67651A227F5700D3175B /* AudioToolbox.framework in Frameworks */,
+				EE7B67631A227F4F00D3175B /* Accounts.framework in Frameworks */,
+				EE7B67601A227E5600D3175B /* Bolts.framework in Frameworks */,
+				EE7B67611A227E5600D3175B /* ParseFacebookUtils.framework in Frameworks */,
+				EE7B675F1A227E5600D3175B /* ParseUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +179,21 @@
 		EE78D6C81A20D6A8009C3270 = {
 			isa = PBXGroup;
 			children = (
+				EE7B679D1A2297E500D3175B /* MapKit.framework */,
+				EE7B67741A227FBE00D3175B /* StoreKit.framework */,
+				EE7B67721A227FB400D3175B /* Social.framework */,
+				EE7B67701A227FA500D3175B /* Security.framework */,
+				EE7B676E1A227F9A00D3175B /* QuartzCore.framework */,
+				EE7B676C1A227F8100D3175B /* libz.dylib */,
+				EE1DA7CE1A22E26100BCD9B1 /* Parse.framework */,
+				EE7B676A1A227F7700D3175B /* CoreLocation.framework */,
+				EE7B67681A227F6E00D3175B /* CoreGraphics.framework */,
+				EE7B67661A227F6500D3175B /* CFNetwork.framework */,
+				EE7B67641A227F5700D3175B /* AudioToolbox.framework */,
+				EE7B67621A227F4F00D3175B /* Accounts.framework */,
+				EE7B675B1A227E5600D3175B /* ParseUI.framework */,
+				EE7B675C1A227E5600D3175B /* Bolts.framework */,
+				EE7B675D1A227E5600D3175B /* ParseFacebookUtils.framework */,
 				EE78D7801A20E2E8009C3270 /* SystemConfiguration.framework */,
 				EE78D77E1A20E2C6009C3270 /* MobileCoreServices.framework */,
 				EE78D6D31A20D6A8009C3270 /* arcosanti */,
@@ -117,6 +214,7 @@
 		EE78D6D31A20D6A8009C3270 /* arcosanti */ = {
 			isa = PBXGroup;
 			children = (
+				EE7B677D1A2296E500D3175B /* ParseAnyWall */,
 				EE78D7821A20EDED009C3270 /* RIArcosantiStoryParser.h */,
 				EE78D7831A20EDED009C3270 /* RIArcosantiStoryParser.m */,
 				EE77BD301A2108B40020F02D /* RIArcosantiFeedDelegate.h */,
@@ -128,7 +226,8 @@
 				EE78D6E11A20D6A8009C3270 /* DetailViewController.h */,
 				EE78D6E21A20D6A8009C3270 /* DetailViewController.m */,
 				EE78D6E41A20D6A9009C3270 /* Main.storyboard */,
-				EE78D6E71A20D6A9009C3270 /* Images.xcassets */,
+				EE7B677B1A22948000D3175B /* Images.xcassets */,
+				EE7B67791A2293F900D3175B /* DSCN0078.jpg */,
 				EE77BD3D1A218BB30020F02D /* photo141028sa0608.jpg */,
 				EE78D6E91A20D6A9009C3270 /* LaunchScreen.xib */,
 				EE78D6DB1A20D6A8009C3270 /* arcosanti.xcdatamodeld */,
@@ -143,6 +242,8 @@
 				EE77BD421A218CF10020F02D /* NewsTableViewCell.m */,
 				EE77BD441A2196E90020F02D /* ImageDownloadOperation.h */,
 				EE77BD451A2196E90020F02D /* ImageDownloadOperation.m */,
+				EE7B67761A22826700D3175B /* LoginViewController.h */,
+				EE7B67771A22826700D3175B /* LoginViewController.m */,
 			);
 			path = arcosanti;
 			sourceTree = "<group>";
@@ -150,6 +251,7 @@
 		EE78D6D41A20D6A8009C3270 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EE7B679F1A22983A00D3175B /* arcosanti-Prefix.pch */,
 				EE78D6D51A20D6A8009C3270 /* Info.plist */,
 				EE78D6D61A20D6A8009C3270 /* main.m */,
 			);
@@ -171,6 +273,34 @@
 				EE78D6F51A20D6A9009C3270 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EE7B677D1A2296E500D3175B /* ParseAnyWall */ = {
+			isa = PBXGroup;
+			children = (
+				EE7B67881A22971B00D3175B /* PAWPostTableViewCell.h */,
+				EE7B67891A22971B00D3175B /* PAWPostTableViewCell.m */,
+				EE7B67811A22970500D3175B /* PAWConfigManager.h */,
+				EE7B67821A22970500D3175B /* PAWConfigManager.m */,
+				EE7B67831A22970500D3175B /* PAWConstants.h */,
+				EE7B677E1A2296FC00D3175B /* PAWPost.h */,
+				EE7B677F1A2296FC00D3175B /* PAWPost.m */,
+				EE7B67851A22971000D3175B /* PAWActivityView.h */,
+				EE7B67861A22971000D3175B /* PAWActivityView.m */,
+				EE7B678B1A22972500D3175B /* PAWLoginViewController.h */,
+				EE7B678C1A22972500D3175B /* PAWLoginViewController.m */,
+				EE7B678D1A22972500D3175B /* PAWNewUserViewController.h */,
+				EE7B678E1A22972500D3175B /* PAWNewUserViewController.m */,
+				EE7B67911A22972E00D3175B /* PAWWallViewController.h */,
+				EE7B67921A22972E00D3175B /* PAWWallViewController.m */,
+				EE7B67931A22972E00D3175B /* PAWWallPostCreateViewController.h */,
+				EE7B67941A22972E00D3175B /* PAWWallPostCreateViewController.m */,
+				EE7B67951A22972E00D3175B /* PAWWallPostsTableViewController.h */,
+				EE7B67961A22972E00D3175B /* PAWWallPostsTableViewController.m */,
+				EE7B679A1A22973600D3175B /* PAWSettingsViewController.h */,
+				EE7B679B1A22973600D3175B /* PAWSettingsViewController.m */,
+			);
+			name = ParseAnyWall;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,9 +385,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE77BD3E1A218BB30020F02D /* photo141028sa0608.jpg in Resources */,
+				EE7B677C1A22948000D3175B /* Images.xcassets in Resources */,
 				EE78D6E61A20D6A9009C3270 /* Main.storyboard in Resources */,
 				EE78D6EB1A20D6A9009C3270 /* LaunchScreen.xib in Resources */,
-				EE78D6E81A20D6A9009C3270 /* Images.xcassets in Resources */,
+				EE7B677A1A2293F900D3175B /* DSCN0078.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,14 +408,25 @@
 			files = (
 				EE77BD351A2138A40020F02D /* RSS.m in Sources */,
 				EE78D6E31A20D6A9009C3270 /* DetailViewController.m in Sources */,
+				EE7B67801A2296FC00D3175B /* PAWPost.m in Sources */,
+				EE7B678A1A22971B00D3175B /* PAWPostTableViewCell.m in Sources */,
+				EE7B67781A22826700D3175B /* LoginViewController.m in Sources */,
 				EE77BD3C1A21819B0020F02D /* GTNMSString+HTML.m in Sources */,
 				EE77BD321A2108B40020F02D /* RIArcosantiFeedDelegate.m in Sources */,
+				EE7B678F1A22972500D3175B /* PAWLoginViewController.m in Sources */,
 				EE78D7841A20EDED009C3270 /* RIArcosantiStoryParser.m in Sources */,
+				EE7B67971A22972E00D3175B /* PAWWallViewController.m in Sources */,
 				EE78D6E01A20D6A8009C3270 /* MasterViewController.m in Sources */,
 				EE78D6DA1A20D6A8009C3270 /* AppDelegate.m in Sources */,
 				EE77BD461A2196E90020F02D /* ImageDownloadOperation.m in Sources */,
+				EE7B67981A22972E00D3175B /* PAWWallPostCreateViewController.m in Sources */,
+				EE7B67991A22972E00D3175B /* PAWWallPostsTableViewController.m in Sources */,
+				EE7B67841A22970500D3175B /* PAWConfigManager.m in Sources */,
 				EE78D6D71A20D6A8009C3270 /* main.m in Sources */,
+				EE7B67871A22971000D3175B /* PAWActivityView.m in Sources */,
+				EE7B679C1A22973600D3175B /* PAWSettingsViewController.m in Sources */,
 				EE77BD431A218CF10020F02D /* NewsTableViewCell.m in Sources */,
+				EE7B67901A22972500D3175B /* PAWNewUserViewController.m in Sources */,
 				EE77BD391A2180710020F02D /* NSString+HTML.m in Sources */,
 				EE78D6DD1A20D6A8009C3270 /* arcosanti.xcdatamodeld in Sources */,
 			);
@@ -411,6 +553,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = arcosanti/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,6 +568,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = arcosanti/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
