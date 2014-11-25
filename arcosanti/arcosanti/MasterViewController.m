@@ -29,28 +29,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-    
+   
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     NSURLSession *rssSession = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [rssSession dataTaskWithURL:[NSURL URLWithString:@"http://arcosanti.org/arconews/rss"] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-                    //NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSString *responseString = [RIArcosantiStoryParser flattenHTML:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
-       // NSLog(@"%@", responseString);
-        RIArcosantiStoryParser *parser = [[RIArcosantiStoryParser alloc]init];
-        [parser parseDownloadData:data];
-        
-    }];
+    NSURLSessionDataTask *dataTask = [rssSession dataTaskWithURL:[NSURL URLWithString:@"http://arcosanti.org/arconews/rss"] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                                      {
+                                          NSString *responseString = [RIArcosantiStoryParser flattenHTML:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
+                                          // NSLog(@"%@", responseString);
+                                          RIArcosantiStoryParser *parser = [[RIArcosantiStoryParser alloc]init];
+                                          [parser parseDownloadData:data];
+                                          
+                                      }];
     
     [dataTask resume];
 
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -82,7 +83,8 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object];
+        //[//controller setDetailItem:object];
+        [_managedObjectContext save:nil];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -104,7 +106,7 @@
     NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsTableViewCell" forIndexPath:indexPath];
     
     [self configureCell:cell atIndexPath:indexPath];
-    
+    //[_managedObjectContext save:nil];
     return cell;
 }
 
