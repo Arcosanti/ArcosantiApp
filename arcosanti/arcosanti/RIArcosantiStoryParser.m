@@ -20,8 +20,6 @@
 @property (nonatomic,strong) NSManagedObjectContext *localManagedObjectContext;
 @end
 
-
-
 @implementation RIArcosantiStoryParser
 
 + (NSString *)flattenHTML:(NSString *)html
@@ -59,10 +57,10 @@
     [parser parse];
 }
 
-
 -(void) insertNewEvent:(NSMutableDictionary *)newEvent
 {
-    
+    //do core data operations on the main thread ok for simple updates
+    //do batch updates on seperate thread with dedicated context
     dispatch_sync(dispatch_get_main_queue(), ^{
         
         self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
@@ -75,33 +73,58 @@
         [dateFormat setDateFormat:@"EEE, d LLL yyyy HH:mm:ss ZZZ"];
         NSDate *eventDate = [dateFormat dateFromString:dateString];
 
-        RSS *eventToInsert = [NSEntityDescription insertNewObjectForEntityForName:@"RSS" inManagedObjectContext:self.appDelegate.managedObjectContext];
-        eventToInsert.articleTitle = [newEvent objectForKey:@"title"];
-        NSString *htmlString = [newEvent objectForKey:@"description"];
-    
-        eventToInsert.articleDescription = [[htmlString stringByConvertingHTMLToPlainText]stringByRemovingNewLinesAndWhitespace];
-        NSLog(@"Decoded: %@",eventToInsert.articleDescription);
-    
-        eventToInsert.articleUrl = [newEvent objectForKey:@"link"];
-        eventToInsert.articleCategory = [newEvent objectForKey:@"category"];
-        eventToInsert.articleDate = eventDate;
-    
-    
-        NSString *imageURL = [self findImageTagInHTML:[newEvent objectForKey:@"description"]];
-    
-        NSLog(@"imageURL:%@ ",imageURL);
-    
-        eventToInsert.articleImage = imageURL;
-
-
-        [eventToInsert.managedObjectContext save:nil];
+        if (!([self fetchEventForTimeStamp:eventDate inContext:self.appDelegate.managedObjectContext]))
+        {
+            RSS *eventToInsert = [NSEntityDescription insertNewObjectForEntityForName:@"RSS" inManagedObjectContext:self.appDelegate.managedObjectContext];
+            eventToInsert.articleTitle = [newEvent objectForKey:@"title"];
+            NSString *htmlString = [newEvent objectForKey:@"description"];
+            
+            eventToInsert.articleDescription = [[htmlString stringByConvertingHTMLToPlainText]stringByRemovingNewLinesAndWhitespace];
+            NSLog(@"Decoded: %@",eventToInsert.articleDescription);
         
-    });
+            eventToInsert.articleUrl = [newEvent objectForKey:@"link"];
+            eventToInsert.articleCategory = [newEvent objectForKey:@"category"];
+            eventToInsert.articleDate = eventDate;
+        
+            NSString *imageURL = [self findImageTagInHTML:[newEvent objectForKey:@"description"]];
+        
+            NSLog(@"imageURL:%@ ",imageURL);
+        
+            eventToInsert.articleImage = imageURL;
 
+            [eventToInsert.managedObjectContext save:nil];
+        }
+    });
+}
+
+-(RSS *) fetchEventForTimeStamp:(NSDate *)eventTimestamp inContext:(NSManagedObjectContext *)managedObjectContext
+{
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
+    [fetchRequest setEntity:[NSEntityDescription entityForName:@"RSS" inManagedObjectContext:managedObjectContext]];
+
+    NSDate *earlyDate = [eventTimestamp dateByAddingTimeInterval:-100];
+    NSDate *laterDate = [eventTimestamp dateByAddingTimeInterval:100];
+
+    //NSLog(@"Event date: %@ between imeStamps : %@", eventTimestamp, timestamps);
+
+    NSPredicate *pre = [NSPredicate predicateWithFormat:@"((articleDate >= %@) AND (articleDate <= %@))", earlyDate,laterDate];
+	[fetchRequest setPredicate:pre];
+
+	NSError *error = nil;
+	NSArray *fetchResults = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+
+	if ([fetchResults count] > 0) {
+		RSS *eventEntity = [fetchResults objectAtIndex:0];
+		return eventEntity;
+	}
+	else {
+		return nil;
+	}
 }
 
 - (void)dealloc
 {
+    //remove any observers if needed
 }
 
 
@@ -119,11 +142,13 @@
     }
     
 }
+
 //This grabs the element content by character repeating till it hits the closing tag.
 -(void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
     [elementContentString appendString:string];
 }
+
 //ending element
 -(void) parser: (NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {

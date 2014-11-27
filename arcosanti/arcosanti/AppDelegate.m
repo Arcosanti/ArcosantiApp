@@ -25,9 +25,6 @@
     [Parse setApplicationId:@"nUjrTJHQiadJQTCpZzToknc6Tv7PmeoSCaJzvkfh"
                   clientKey:@"cz8hFNTWIbomk1vihCSbdGuu5aPATuzNexD1ij3O"];
 
-    
-    
-    
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;

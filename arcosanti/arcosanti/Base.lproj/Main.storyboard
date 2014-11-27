@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="701" y="129"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -173,7 +173,7 @@
                                     <outlet property="descriptionLabel" destination="MRb-lF-hKY" id="OX5-HD-Akv"/>
                                     <outlet property="newsImage" destination="lud-a2-875" id="IjG-s6-oub"/>
                                     <outlet property="titleLabel" destination="SUO-h5-Q3h" id="vuq-Gk-Oa4"/>
-                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
+                                    <segue destination="Czq-VC-0JR" kind="showDetail" id="ZGK-oU-AWb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -229,7 +229,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ns-E0-Y4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434" y="-649"/>
+            <point key="canvasLocation" x="1483" y="-1391"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wYr-UU-wfZ">
+            <objects>
+                <viewController id="Czq-VC-0JR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="du0-4C-I3K"/>
+                        <viewControllerLayoutGuide type="bottom" id="XQY-OO-ngm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J1k-hB-DEF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Jd-mw-B47" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1482" y="-649"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qTf-tE-3ck">
@@ -487,7 +505,4 @@
         <image name="icon_user" width="16" height="16"/>
         <image name="photo141028sa0608.jpg" width="800" height="600"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
-    </inferredMetricsTieBreakers>
 </document>
