@@ -8,10 +8,17 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-#import "DetailViewController.h"
+#import "ArcoNewsStoryViewController.h"
 #import "MasterViewController.h"
+#import "PAWWallViewController.h"
+#import "PAWSettingsViewController.h"
+#import "PAWLoginViewController.h"
 
-@interface AppDelegate () <UISplitViewControllerDelegate>
+@interface AppDelegate () <UISplitViewControllerDelegate ,PAWLoginViewControllerDelegate,
+PAWWallViewControllerDelegate,
+PAWSettingsViewControllerDelegate>
+
+@property (nonatomic,strong ) UINavigationController *navigationController;
 
 @end
 
@@ -35,6 +42,16 @@
     controller.managedObjectContext = self.managedObjectContext;
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
+    
     
     return YES;
 }
@@ -68,7 +85,7 @@
 #pragma mark - Split view
 
 - (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
-    if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[DetailViewController class]] && ([(DetailViewController *)[(UINavigationController *)secondaryViewController topViewController] detailItem] == nil)) {
+    if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[ArcoNewsStoryViewController class]] && ([(ArcoNewsStoryViewController *)[(UINavigationController *)secondaryViewController topViewController] detailItem] == nil)) {
         // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
         return YES;
     } else {
@@ -150,6 +167,58 @@
             abort();
         }
     }
+}
+
+#pragma mark -
+#pragma mark LoginViewController
+
+- (void)presentLoginViewController {
+    // Go to the welcome screen and have them log in or create an account.
+    PAWLoginViewController *viewController = [[PAWLoginViewController alloc] initWithNibName:nil bundle:nil];
+    viewController.delegate = self;
+    [self.navigationController setViewControllers:@[ viewController ] animated:NO];
+}
+
+#pragma mark Delegate
+
+- (void)loginViewControllerDidLogin:(PAWLoginViewController *)controller {
+    [self presentWallViewControllerAnimated:YES];
+}
+
+#pragma mark -
+#pragma mark WallViewController
+
+- (void)presentWallViewControllerAnimated:(BOOL)animated {
+    
+//    PAWWallViewController *wallViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WallViewController"];
+//    
+//    wallViewController.delegate = self;
+//    [self.navigationController showDetailViewController:wallViewController sender:self];
+//    
+    
+}
+
+#pragma mark Delegate
+
+- (void)wallViewControllerWantsToPresentSettings:(PAWWallViewController *)controller {
+    [self presentSettingsViewController];
+}
+
+#pragma mark -
+#pragma mark SettingsViewController
+
+- (void)presentSettingsViewController {
+    PAWSettingsViewController *settingsViewController = [[PAWSettingsViewController alloc] initWithNibName:nil bundle:nil];
+    settingsViewController.delegate = self;
+    settingsViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self.navigationController presentViewController:settingsViewController animated:YES completion:nil];
+}
+
+#pragma mark Delegate
+
+- (void)settingsViewControllerDidLogout:(PAWSettingsViewController *)controller {
+    [controller dismissViewControllerAnimated:YES completion:nil];
+    [self presentLoginViewController];
 }
 
 @end

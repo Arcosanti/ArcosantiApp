@@ -13,6 +13,7 @@
 
 #import "PAWActivityView.h"
 #import "PAWNewUserViewController.h"
+#import "AppDelegate.h"
 
 @interface PAWLoginViewController ()
 <UITextFieldDelegate,
@@ -59,6 +60,8 @@ PAWNewUserViewControllerDelegate>
                                                                                            action:@selector(dismissKeyboard)];
     tapGestureRecognizer.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapGestureRecognizer];
+    
+    self.delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
 
     [self registerForKeyboardNotifications];
 }
@@ -66,7 +69,7 @@ PAWNewUserViewControllerDelegate>
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -99,73 +102,26 @@ PAWNewUserViewControllerDelegate>
 
 - (IBAction)loginPressed:(id)sender {
     [self dismissKeyboard];
-    [self processFieldEntries];
-}
-
-- (IBAction)loginWithFacebookPressed:(id)sender {
-    // Set up activity view
-    self.activityViewVisible = YES;
-    // Login PFUser using facebook
-//    [PFFacebookUtils logInWithPermissions:nil block:^(PFUser *user, NSError *error) {
-//        if (!user) {
-//            // Hide the activity view
-//            self.activityViewVisible = NO;
-//            NSString *alertMessage, *alertTitle;
-//            if (error) {
-//                FBErrorCategory errorCategory = [FBErrorUtility errorCategoryForError:error];
-//                if ([FBErrorUtility shouldNotifyUserForError:error]) {
-//                    // If the SDK has a message for the user, surface it.
-//                    alertTitle = @"Something Went Wrong";
-//                    alertMessage = [FBErrorUtility userMessageForError:error];
-//                } else if (errorCategory == FBErrorCategoryAuthenticationReopenSession) {
-//                    // It is important to handle session closures. We notify the user.
-//                    alertTitle = @"Session Error";
-//                    alertMessage = @"Your current session is no longer valid. Please log in again.";
-//                } else if (errorCategory == FBErrorCategoryUserCancelled) {
-//                    // The user has cancelled a login. You can inspect the error
-//                    // for more context. Here, we will simply ignore it.
-//                    NSLog(@"user cancelled login");
-//                } else {
-//                    // Handle all other errors in a generic fashion
-//                    alertTitle  = @"Unknown Error";
-//                    alertMessage = @"Error. Please try again later.";
-//                }
-//
-//                if (alertMessage) {
-//                    [[[UIAlertView alloc] initWithTitle:alertTitle
-//                                                message:alertMessage
-//                                               delegate:nil
-//                                      cancelButtonTitle:@"Dismiss"
-//                                      otherButtonTitles:nil] show];
-//                }
-//            }
-//        } else {
-//            // Make a call to get user info
-//            [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
-//                dispatch_block_t completion = ^{
-//                    // Hide the activity view
-//                    self.activityViewVisible = NO;
-//                    // Show the logged in view
-//                    [self.delegate loginViewControllerDidLogin:self];
-//                };
-//
-//                if (error) {
-//                    completion();
-//                } else {
-//                    // Save the name on Parse
-//                    [PFUser currentUser][@"name"] = user.name;
-//                    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//                        completion();
-//                    }];
-//                }
-//            }];
-//        }
-//    }];
+    //
 }
 
 - (IBAction)signUpPressed:(id)sender {
     [self presentNewUserViewController];
 }
+
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"ShowAnyWall"])
+    {
+            [self processFieldEntries];
+    }
+    
+}
+
+
+
 
 #pragma mark -
 #pragma mark UITextFieldDelegate
@@ -186,7 +142,10 @@ PAWNewUserViewControllerDelegate>
 #pragma mark NewUserViewController
 
 - (void)presentNewUserViewController {
-    PAWNewUserViewController *viewController = [[PAWNewUserViewController alloc] initWithNibName:nil bundle:nil];
+    
+    PAWNewUserViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"NewUserViewController"];
+    
+   // PAWNewUserViewController *viewController = [[PAWNewUserViewController alloc] initWithNibName:nil bundle:nil];
     viewController.delegate = self;
     [self.navigationController presentViewController:viewController animated:YES completion:nil];
 }

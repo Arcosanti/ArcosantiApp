@@ -19,7 +19,7 @@
 		EE78D6DA1A20D6A8009C3270 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6D91A20D6A8009C3270 /* AppDelegate.m */; };
 		EE78D6DD1A20D6A8009C3270 /* arcosanti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6DB1A20D6A8009C3270 /* arcosanti.xcdatamodeld */; };
 		EE78D6E01A20D6A8009C3270 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6DF1A20D6A8009C3270 /* MasterViewController.m */; };
-		EE78D6E31A20D6A9009C3270 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6E21A20D6A8009C3270 /* DetailViewController.m */; };
+		EE78D6E31A20D6A9009C3270 /* ArcoNewsStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6E21A20D6A8009C3270 /* ArcoNewsStoryViewController.m */; };
 		EE78D6E61A20D6A9009C3270 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE78D6E41A20D6A9009C3270 /* Main.storyboard */; };
 		EE78D6EB1A20D6A9009C3270 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE78D6E91A20D6A9009C3270 /* LaunchScreen.xib */; };
 		EE78D6F71A20D6A9009C3270 /* arcosantiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE78D6F61A20D6A9009C3270 /* arcosantiTests.m */; };
@@ -88,8 +88,8 @@
 		EE78D6DC1A20D6A8009C3270 /* arcosanti.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = arcosanti.xcdatamodel; sourceTree = "<group>"; };
 		EE78D6DE1A20D6A8009C3270 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		EE78D6DF1A20D6A8009C3270 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		EE78D6E11A20D6A8009C3270 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		EE78D6E21A20D6A8009C3270 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		EE78D6E11A20D6A8009C3270 /* ArcoNewsStoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArcoNewsStoryViewController.h; sourceTree = "<group>"; };
+		EE78D6E21A20D6A8009C3270 /* ArcoNewsStoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArcoNewsStoryViewController.m; sourceTree = "<group>"; };
 		EE78D6E51A20D6A9009C3270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE78D6EA1A20D6A9009C3270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EE78D6F01A20D6A9009C3270 /* arcosantiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arcosantiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,8 +223,8 @@
 				EE78D6D91A20D6A8009C3270 /* AppDelegate.m */,
 				EE78D6DE1A20D6A8009C3270 /* MasterViewController.h */,
 				EE78D6DF1A20D6A8009C3270 /* MasterViewController.m */,
-				EE78D6E11A20D6A8009C3270 /* DetailViewController.h */,
-				EE78D6E21A20D6A8009C3270 /* DetailViewController.m */,
+				EE78D6E11A20D6A8009C3270 /* ArcoNewsStoryViewController.h */,
+				EE78D6E21A20D6A8009C3270 /* ArcoNewsStoryViewController.m */,
 				EE78D6E41A20D6A9009C3270 /* Main.storyboard */,
 				EE7B677B1A22948000D3175B /* Images.xcassets */,
 				EE7B67791A2293F900D3175B /* DSCN0078.jpg */,
@@ -407,7 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE77BD351A2138A40020F02D /* RSS.m in Sources */,
-				EE78D6E31A20D6A9009C3270 /* DetailViewController.m in Sources */,
+				EE78D6E31A20D6A9009C3270 /* ArcoNewsStoryViewController.m in Sources */,
 				EE7B67801A2296FC00D3175B /* PAWPost.m in Sources */,
 				EE7B678A1A22971B00D3175B /* PAWPostTableViewCell.m in Sources */,
 				EE7B67781A22826700D3175B /* LoginViewController.m in Sources */,
@@ -553,6 +553,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -560,6 +561,7 @@
 				INFOPLIST_FILE = arcosanti/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -568,6 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -575,6 +578,7 @@
 				INFOPLIST_FILE = arcosanti/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

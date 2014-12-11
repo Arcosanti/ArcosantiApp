@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Jeffrey Kunzelman. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "ArcoNewsStoryViewController.h"
 
-@interface DetailViewController ()
+@interface ArcoNewsStoryViewController ()
 
 @end
 
-@implementation DetailViewController
+@implementation ArcoNewsStoryViewController
 
 #pragma mark - Managing the detail item
 
@@ -27,9 +27,9 @@
 
 - (void)configureView {
     // Update the user interface for the detail item.
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
-    }
+//    if (self.detailItem) {
+//        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+//    }
 }
 
 - (void)viewDidLoad {

@@ -254,14 +254,21 @@ PAWWallPostCreateViewControllerDataSource>
 #pragma mark CLLocationManagerDelegate methods and helpers
 
 - (CLLocationManager *)locationManager {
+    
+    
+    
     if (_locationManager == nil) {
         _locationManager = [[CLLocationManager alloc] init];
-
+        
+        [self.locationManager requestWhenInUseAuthorization];
+        
         _locationManager.delegate = self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 
         // Set a movement threshold for new events.
         _locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+       
+
     }
     return _locationManager;
 }
@@ -298,6 +305,8 @@ PAWWallPostCreateViewControllerDataSource>
         case kCLAuthorizationStatusNotDetermined:
         {
             NSLog(@"kCLAuthorizationStatusNotDetermined");
+            [self.locationManager requestWhenInUseAuthorization];
+
         }
             break;
         case kCLAuthorizationStatusRestricted:

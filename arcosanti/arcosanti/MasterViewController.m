@@ -7,7 +7,7 @@
 //
 #import <Foundation/Foundation.h>
 #import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "ArcoNewsStoryViewController.h"
 #import "RIArcosantiStoryParser.h"
 #import "NewsTableViewCell.h"
 #import "RSS.h"
@@ -30,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.detailViewController = (ArcoNewsStoryViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
    
 }
@@ -58,10 +58,10 @@
 }
 
 - (void)insertNewObject:(id)sender {
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-//        
+//    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+//    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+//    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+////        
 //    // If appropriate, configure the new managed object.
 //    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
 //    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
@@ -79,14 +79,23 @@
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    
+    if ([[segue identifier] isEqualToString:@"SelectedCell"]) {
+        
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        //[//controller setDetailItem:object];
-        [_managedObjectContext save:nil];
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
+        RSS *rssStory = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        
+        UINavigationController *navController = (UINavigationController*)[segue destinationViewController];
+        ArcoNewsStoryViewController *controller = (ArcoNewsStoryViewController *)[navController topViewController];
+
+        NSURL *url = [NSURL URLWithString:rssStory.articleUrl];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+        [controller.webView loadRequest:urlRequest];
+        
+        
+        navController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        navController.navigationItem.leftItemsSupplementBackButton = YES;
+        
     }
 }
 
@@ -106,7 +115,6 @@
     NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsTableViewCell" forIndexPath:indexPath];
     
     [self configureCell:cell atIndexPath:indexPath];
-    //[_managedObjectContext save:nil];
     return cell;
 }
 
